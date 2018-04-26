@@ -3,26 +3,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title><%- page.title ? page.title + ' — ' : '' %>Vue.js</title>
+    <title><%- page.title ? page.title + ' — ' : '' %>Vue Native</title>
     <meta charset="utf-8">
     <meta name="description" content="<%- theme.site_description %>">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <link rel="alternate" hreflang="x-default" href="https://vuejs.org/<%- page.path %>">
-    <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/<%- page.path %>">
+    <!-- <link rel="alternate" hreflang="x-default" href="https://vuejs.org/<%- page.path %>"> -->
+    <!-- <link rel="alternate" hreflang="zh" href="https://cn.vuejs.org/<%- page.path %>">
     <link rel="alternate" hreflang="ja" href="https://jp.vuejs.org/<%- page.path %>">
     <link rel="alternate" hreflang="ru" href="https://ru.vuejs.org/<%- page.path %>">
     <link rel="alternate" hreflang="ko" href="https://kr.vuejs.org/<%- page.path %>">
     <link rel="alternate" hreflang="pt-BR" href="https://br.vuejs.org/<%- page.path %>">
-    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/<%- page.path %>">
+    <link rel="alternate" hreflang="fr" href="https://fr.vuejs.org/<%- page.path %>"> -->
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="<%- page.title ? page.title + ' — ' : '' %>Vue.js">
+    <meta property="og:title" content="<%- page.title ? page.title + ' — ' : '' %>Vue Native">
     <meta property="og:description" content="<%- theme.site_description %>">
     <meta property="og:image" content="https://<%- theme.root_domain %>/<%- url_for("/images/logo.png") %>">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="<%- page.title ? page.title + ' — ' : '' %>Vue.js">
+    <meta name="twitter:title" content="<%- page.title ? page.title + ' — ' : '' %>Vue Native">
     <meta name="twitter:description" content="<%- theme.site_description %>">
     <meta name="twitter:image" content="https://<%- theme.root_domain %>/images/logo.png">
 
@@ -61,7 +61,7 @@
     <script>window.PAGE_TYPE = "<%- page.type %>"</script>
 
     <!-- ga -->
-    <script>
+    <!-- <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -69,10 +69,10 @@
 
       ga('create', '<%- theme.google_analytics %>', '<%- theme.root_domain %>');
       ga('send', 'pageview');
-    </script>
+    </script> -->
 
     <!-- vimeo analytics -->
-    <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script>
+    <!-- <script type="text/javascript" defer="defer" src="https://extend.vimeocdn.com/ga/72160148.js"></script> -->
   </head>
   <body class="<%- isIndex ? '' : 'docs' -%>">
     <div id="mobile-bar" <%- isIndex ? 'class="top"' : '' %>>
@@ -101,7 +101,7 @@
     <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
     <%- css('css/search') %>
     <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
-    <script>
+    <!-- <script>
     [
       '#search-query-nav',
       '#search-query-sidebar',
@@ -119,7 +119,7 @@
       algoliaOptions: { facetFilters: ["version:" + version] }
       })
     })
-    </script>
+    </script> -->
 
     <!-- fastclick -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>

@@ -1,7 +1,7 @@
-site_description: "Vue.js - The Progressive JavaScript Framework"
-google_analytics: UA-46852172-1
-root_domain: vuejs.org
-vue_version: 2.5.13
+site_description: "Vue Native - The Progressive JavaScript Framework For Mobile Apps"
+# google_analytics: UA-46852172-1
+root_domain: http://vuenativedocs.geekydev.com
+vue_version: 0.0.5
 
 special_sponsors:
   - url: https://stdlib.com
