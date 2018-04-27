@@ -4,15 +4,66 @@ type: guide
 order: 2
 ---
 
+## What is Vue Native?
+Vue Native is a mobile framework to build truly native mobile app using [Vue.js](https://vuejs.org/). Its is designed to connect [React Native](https://facebook.github.io/react-native) and Vue.js.
+
+Vue Native is a wrapper around React Native APIs, which allows you to use Vue.js and compose rich mobile User Interface.
+
 ## What is Vue.js?
 
-Vue (pronounced /vjuː/, like **view**) is a **progressive framework** for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with [modern tooling](single-file-components.html) and [supporting libraries](https://github.com/vuejs/awesome-vue#components--libraries).
+Vue (pronounced /vjuː/, like **view**) is a **progressive framework** for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects.
 
-If you’d like to learn more about Vue before diving in, we <a id="modal-player"  href="#">created a video</a> walking through the core principles and a sample project.
-
-If you are an experienced frontend developer and want to know how Vue compares to other libraries/frameworks, check out the [Comparison with Other Frameworks](comparison.html).
+## What is React Native?
+React Native is an open source framework for building truly native mobile application for IOS and Android platform using JavaScript.
 
 ## Getting Started
+
+** Hello World In Vue Native **
+
+The easiest way to try out [Vue Native](http://vuenativedocs.geekydev.com) is by building a Hello world app. The [Installation](installation.html) page provides setup of installing Vue Native and setup the project.
+
+Create a .vue file and copy and paste the below content.
+
+```html
+<template>
+  <view class="container">
+    <text class="text-color-primary">{{message}}</text>
+    </view>
+</template>
+```
+
+```JS
+<script>
+export default {
+  data: function() {
+    return {
+      message: "Hello World"
+    };
+  }
+};
+</script>
+```
+
+```css
+<style>
+.container {
+  flex: 1;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+}
+.text-color-primary {
+  color: blue;
+  font-size: 30;
+}
+</style>
+```
+
+<div class="hello-world-container">
+<div class="hello-world-wrapper">
+  <img src="/images/helloWorld.png" class="img-wrapper" />
+</div>
+</div>
 
 <p class="tip">The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required.</p>
 
