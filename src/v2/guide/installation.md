@@ -11,7 +11,7 @@ This page will help you install and build your first native app using [Vue Nativ
 **System Requirements**
 * Globally installed [node](https://nodejs.org/en/) >= 6.0
 * Globally installed [npm](https://www.npmjs.com/) >= 4.0
-* Globally installed [React Native CLI](https://facebook.github.io/react-native/docs/getting-started.html) which allow you to easily create.
+* Globally installed [React Native CLI](https://facebook.github.io/react-native/docs/getting-started.html) which allow you to easily create and initialize projects.
 
 ## Setup with React Native
 
