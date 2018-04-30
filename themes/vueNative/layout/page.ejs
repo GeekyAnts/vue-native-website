@@ -14,9 +14,7 @@
         <input type="text" id="search-query-menu" class="search-query st-default-search-input">
       </form>
       <%- partial('partials/toc', { type: 'guide' }) %>
-    <% } else { %>
-      <%- partial('partials/ad') %>
-    <% } %>
+    <% }
   <% } %>
   <% if (page.title.trim()) { %>
     <h1><%- page.title %><%- page.type === 'examples' ? ' Example' : '' %></h1>
@@ -39,11 +37,8 @@
     </div>
   <% } %>
   <div class="footer">
-    <%_ if (!page.sponsors) { _%>
-      <%- partial('partials/ad-text') %>
-    <%_ } _%>
     Caught a mistake or want to contribute to the documentation?
-    <a href="https://github.com/vuejs/vuejs.org/blob/master/src/<%- page.path.replace(/\.html$/, '.md') %>" target="_blank">
+    <a href="https://github.com/GeekyAnts/vue-native-website" target="_blank">
       Edit this page on GitHub!
     </a>
   </div>

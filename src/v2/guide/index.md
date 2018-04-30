@@ -60,380 +60,352 @@ export default {
 ```
 
 <div class="hello-world-container">
-<div class="hello-world-wrapper">
-  <img src="/images/helloWorld.png" class="img-wrapper" />
+  <div class="hello-world-wrapper">
+    <img src="/images/helloWorld.png" class="img-wrapper" />
+  </div>
 </div>
-</div>
-
-<p class="tip">The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required.</p>
-
-The easiest way to try out Vue.js is using the [JSFiddle Hello World example](https://jsfiddle.net/chrisvfritz/50wL7mdz/). Feel free to open it in another tab and follow along as we go through some basic examples. Or, you can <a href="https://gist.githubusercontent.com/chrisvfritz/7f8d7d63000b48493c336e48b3db3e52/raw/ed60c4e5d5c6fec48b0921edaed0cb60be30e87c/index.html" target="_blank" download="index.html">create an <code>index.html</code> file</a> and include Vue with:
-
-``` html
-<!-- development version, includes helpful console warnings -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-```
-
-or:
-
-``` html
-<!-- production version, optimized for size and speed -->
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-```
-
-The [Installation](installation.html) page provides more options of installing Vue. Note: We **do not** recommend that beginners start with `vue-cli`, especially if you are not yet familiar with Node.js-based build tools.
 
 ## Declarative Rendering
 
-At the core of Vue.js is a system that enables us to declaratively render data to the DOM using straightforward template syntax:
+At the core of Vue Native is a system that enables us to declaratively render data using straightforward template syntax:
 
 ``` html
-<div id="app">
-  {{ message }}
-</div>
+<view>
+  <text>{{ message }}</text>
+</view>
 ```
-``` js
-var app = new Vue({
-  el: '#app',
-  data: {
-    message: 'Hello Vue!'
-  }
-})
-```
-{% raw %}
-<div id="app" class="demo">
-  {{ message }}
-</div>
+```JS
 <script>
-var app = new Vue({
-  el: '#app',
-  data: {
-    message: 'Hello Vue!'
+export default {
+  data: function() {
+    return {
+      message: "Hello World"
+    };
   }
-})
+};
 </script>
-{% endraw %}
+```
 
-We have already created our very first Vue app! This looks pretty similar to rendering a string template, but Vue has done a lot of work under the hood. The data and the DOM are now linked, and everything is now **reactive**. How do we know? Open your browser's JavaScript console (right now, on this page) and set `app.message` to a different value. You should see the rendered example above update accordingly.
+We have already created our very first `Vue Native` app! This looks pretty similar to rendering a string template, but under the hood a lot work is been done. The data and the native UI elements are now linked, and everything is now **reactive**.
 
 In addition to text interpolation, we can also bind element attributes like this:
 
 ``` html
-<div id="app-2">
-  <span v-bind:title="message">
-    Hover your mouse over me for a few seconds
-    to see my dynamically bound title!
-  </span>
-</div>
+<view>
+  <button v-bind:title="message" v-bind:on-press="handleBtnPress"/>
+</view>
 ```
-``` js
-var app2 = new Vue({
-  el: '#app-2',
-  data: {
-    message: 'You loaded this page on ' + new Date().toLocaleString()
-  }
-})
-```
-{% raw %}
-<div id="app-2" class="demo">
-  <span v-bind:title="message">
-    Hover your mouse over me for a few seconds to see my dynamically bound title!
-  </span>
-</div>
+```JS
 <script>
-var app2 = new Vue({
-  el: '#app-2',
-  data: {
-    message: 'You loaded this page on ' + new Date().toLocaleString()
+export default {
+  data: function() {
+    return {
+      message: "Hello World"
+    };
+  },
+  methods: {
+    handleBtnPress: function() {
+      alert('Btn Press');
+    }
   }
-})
+};
 </script>
-{% endraw %}
+```
 
-Here we are encountering something new. The `v-bind` attribute you are seeing is called a **directive**. Directives are prefixed with `v-` to indicate that they are special attributes provided by Vue, and as you may have guessed, they apply special reactive behavior to the rendered DOM. Here, it is basically saying "keep this element's `title` attribute up-to-date with the `message` property on the Vue instance."
+Here we are encountering something new. The `v-bind` attribute you are seeing is called a **directive**. Directives are prefixed with `v-` to indicate that they are special attributes provided by Vue Native, which internal bind with the React Native props and as you may have guessed, they apply special reactive behavior in re-rendering. Here, it is basically saying "keep this element's `title` attribute up-to-date with the `message` property on the Vue instance."
 
-If you open up your JavaScript console again and enter `app2.message = 'some new message'`, you'll once again see that the bound HTML - in this case the `title` attribute - has been updated.
+<div class="hello-world-container">
+  <div class="hello-world-wrapper">
+    <img src="/images/btn_helloWorld.png" class="img-wrapper" />
+  </div>
+  <div class="hello-world-wrapper">
+    <img src="/images/btn_helloWorld_press.png" class="img-wrapper" />
+  </div>
+</div>
+
 
 ## Conditionals and Loops
 
 It's easy to toggle the presence of an element, too:
 
 ``` html
-<div id="app-3">
-  <span v-if="seen">Now you see me</span>
-</div>
+<view>
+  <text v-if="seen">Now you see me</text>
+</view>
 ```
 
-``` js
-var app3 = new Vue({
-  el: '#app-3',
-  data: {
-    seen: true
-  }
-})
-```
-
-{% raw %}
-<div id="app-3" class="demo">
-  <span v-if="seen">Now you see me</span>
-</div>
+```JS
 <script>
-var app3 = new Vue({
-  el: '#app-3',
-  data: {
-    seen: true
+export default {
+  data: function() {
+    return {
+      seen: false
+    };
   }
-})
+};
 </script>
-{% endraw %}
+```
 
-Go ahead and enter `app3.seen = false` in the console. You should see the message disappear.
-
-This example demonstrates that we can bind data to not only text and attributes, but also the **structure** of the DOM. Moreover, Vue also provides a powerful transition effect system that can automatically apply [transition effects](transitions.html) when elements are inserted/updated/removed by Vue.
+This example demonstrates that we can bind data, and dynamically manipulate the UI elements.
 
 There are quite a few other directives, each with its own special functionality. For example, the `v-for` directive can be used for displaying a list of items using the data from an Array:
 
 ``` html
-<div id="app-4">
-  <ol>
-    <li v-for="todo in todos">
-      {{ todo.text }}
-    </li>
-  </ol>
-</div>
+<view class="container">
+  <text class="text-container" v-for="todo in todos" :key="todo.text">
+    {{ todo.text }}
+  </text>
+</view>
 ```
-``` js
-var app4 = new Vue({
-  el: '#app-4',
-  data: {
-    todos: [
-      { text: 'Learn JavaScript' },
-      { text: 'Learn Vue' },
-      { text: 'Build something awesome' }
-    ]
-  }
-})
-```
-{% raw %}
-<div id="app-4" class="demo">
-  <ol>
-    <li v-for="todo in todos">
-      {{ todo.text }}
-    </li>
-  </ol>
-</div>
+```JS
 <script>
-var app4 = new Vue({
-  el: '#app-4',
-  data: {
-    todos: [
-      { text: 'Learn JavaScript' },
-      { text: 'Learn Vue' },
-      { text: 'Build something awesome' }
-    ]
+export default {
+  data: function() {
+    return {
+      todos: [
+        { text: "Learn JavaScript" },
+        { text: "Learn Vue" },
+        { text: "Build something awesome" }
+      ]
+    };
   }
-})
+};
 </script>
-{% endraw %}
+```
 
-In the console, enter `app4.todos.push({ text: 'New item' })`. You should see a new item appended to the list.
+```css
+<style>
+.container {
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+.text-container {
+  color: blue;
+  padding: 2;
+}
+</style>
+```
+
+<div class="hello-world-container">
+  <div class="hello-world-wrapper">
+    <img src="/images/vFor_text_list.png" class="img-wrapper" />
+  </div>
+</div>
 
 ## Handling User Input
 
-To let users interact with your app, we can use the `v-on` directive to attach event listeners that invoke methods on our Vue instances:
+To let users interact with your app, we can use the `v-bind` directive to attach event listeners that invoke methods on our Vue Native instances:
 
 ``` html
-<div id="app-5">
-  <p>{{ message }}</p>
-  <button v-on:click="reverseMessage">Reverse Message</button>
-</div>
+<view class="container">
+  <button v-bind:onPress="handleBtnClickCount" :title="btnTitle" />
+  <text class="text-container">{{btnClickCount}}</text>
+</view>
 ```
 ``` js
-var app5 = new Vue({
-  el: '#app-5',
-  data: {
-    message: 'Hello Vue.js!'
-  },
-  methods: {
-    reverseMessage: function () {
-      this.message = this.message.split('').reverse().join('')
-    }
-  }
-})
-```
-{% raw %}
-<div id="app-5" class="demo">
-  <p>{{ message }}</p>
-  <button v-on:click="reverseMessage">Reverse Message</button>
-</div>
 <script>
-var app5 = new Vue({
-  el: '#app-5',
-  data: {
-    message: 'Hello Vue.js!'
+export default {
+  data: function() {
+    return {
+      btnTitle: "Click Me",
+      btnClickCount: 0,
+    };
   },
   methods: {
-    reverseMessage: function () {
-      this.message = this.message.split('').reverse().join('')
+    handleBtnClickCount: function() {
+      this.btnClickCount = this.btnClickCount + 1;
     }
   }
-})
+};
 </script>
-{% endraw %}
+```
 
-Note that in this method we update the state of our app without touching the DOM - all DOM manipulations are handled by Vue, and the code you write is focused on the underlying logic.
+```css
+<style>
+.container {
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+.text-container {
+  color: blue;
+  padding: 2;
+  font-size: 20;
+}
+</style>
+```
 
-Vue also provides the `v-model` directive that makes two-way binding between form input and app state a breeze:
+<div class="hello-world-container">
+  <div class="hello-world-wrapper">
+    <img src="/images/btn_click_counter_demo.gif" class="img-wrapper" />
+  </div>
+</div>
+
+Note that in this method we update the state of our app when ever the user click on the button, and Vue Native internally talk with the React Native to update the UI Elements
+
+Vue Native also provides the `v-model` directive that makes two-way binding between form input and app state a breeze:
 
 ``` html
-<div id="app-6">
-  <p>{{ message }}</p>
-  <input v-model="message">
-</div>
+<view class="container">
+    <text-input
+      class="text-input-container"
+      placeholder="Type here to translate!"
+      v-model="textContent"
+    />
+    <text class="text-container">{{textContent}}</text>
+</view>
 ```
 ``` js
-var app6 = new Vue({
-  el: '#app-6',
-  data: {
-    message: 'Hello Vue!'
-  }
-})
-```
-{% raw %}
-<div id="app-6" class="demo">
-  <p>{{ message }}</p>
-  <input v-model="message">
-</div>
 <script>
-var app6 = new Vue({
-  el: '#app-6',
-  data: {
-    message: 'Hello Vue!'
+export default {
+  data: function() {
+    return {
+      textContent: ""
+    };
   }
-})
+};
 </script>
-{% endraw %}
+```
+```css
+<style>
+.container {
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+.text-container {
+  color: blue;
+  padding: 2;
+  font-size: 22;
+}
+.text-input-container {
+  width: 300;
+  height: 40;
+  font-size: 22;
+  border-color: gray;
+}
+</style>
+```
+
+<div class="hello-world-container">
+  <div class="hello-world-wrapper">
+    <img src="/images/v-model-input.gif" class="img-wrapper" />
+  </div>
+</div>
 
 ## Composing with Components
 
-The component system is another important concept in Vue, because it's an abstraction that allows us to build large-scale applications composed of small, self-contained, and often reusable components. If we think about it, almost any type of application interface can be abstracted into a tree of components:
+The component system is another important concept in Vue Native, because it's an abstraction that allows us to build large-scale applications composed of small, self-contained, and often reusable components. If we think about it, almost any type of application interface can be abstracted into a tree of components:
 
 ![Component Tree](/images/components.png)
 
-In Vue, a component is essentially a Vue instance with pre-defined options. Registering a component in Vue is straightforward:
+In Vue Native, registering a component is straightforward, you can simply declare the component in the `components` property:
 
-``` js
-// Define a new component called todo-item
-Vue.component('todo-item', {
-  template: '<li>This is a todo</li>'
-})
-```
-
-Now you can compose it in another component's template:
-
+create a `todoItem.vue` file
 ``` html
-<ol>
-  <!-- Create an instance of the todo-item component -->
-  <todo-item></todo-item>
-</ol>
+<template>
+  <text> {{item.id}}. {{item.text}} </text>
+</template>
 ```
-
-But this would render the same text for every todo, which is not super interesting. We should be able to pass data from the parent scope into child components. Let's modify the component definition to make it accept a [prop](components.html#Props):
-
-``` js
-Vue.component('todo-item', {
-  // The todo-item component now accepts a
-  // "prop", which is like a custom attribute.
-  // This prop is called todo.
-  props: ['todo'],
-  template: '<li>{{ todo.text }}</li>'
-})
-```
-
-Now we can pass the todo into each repeated component using `v-bind`:
-
-``` html
-<div id="app-7">
-  <ol>
-    <!--
-      Now we provide each todo-item with the todo object
-      it's representing, so that its content can be dynamic.
-      We also need to provide each component with a "key",
-      which will be explained later.
-    -->
-    <todo-item
-      v-for="item in groceryList"
-      v-bind:todo="item"
-      v-bind:key="item.id">
-    </todo-item>
-  </ol>
-</div>
-```
-``` js
-Vue.component('todo-item', {
-  props: ['todo'],
-  template: '<li>{{ todo.text }}</li>'
-})
-
-var app7 = new Vue({
-  el: '#app-7',
-  data: {
-    groceryList: [
-      { id: 0, text: 'Vegetables' },
-      { id: 1, text: 'Cheese' },
-      { id: 2, text: 'Whatever else humans are supposed to eat' }
-    ]
-  }
-})
-```
-{% raw %}
-<div id="app-7" class="demo">
-  <ol>
-    <todo-item v-for="item in groceryList" v-bind:todo="item" :key="item.id"></todo-item>
-  </ol>
-</div>
+```js
 <script>
-Vue.component('todo-item', {
-  props: ['todo'],
-  template: '<li>{{ todo.text }}</li>'
-})
-var app7 = new Vue({
-  el: '#app-7',
-  data: {
-    groceryList: [
-      { id: 0, text: 'Vegetables' },
-      { id: 1, text: 'Cheese' },
-      { id: 2, text: 'Whatever else humans are supposed to eat' }
-    ]
+export default {
+  props: {
+    item: {
+      Type: Object
+    }
   }
-})
+};
 </script>
-{% endraw %}
+```
+
+create another `.vue file` and import the above `todoItem` components
+```html
+<template>
+  <view class="container">
+  <!--
+    Now we provide each todo-item with the todo object
+    it's representing, so that its content can be dynamic.
+    We also need to provide each component with a "key",
+    which will be explained later.
+  -->
+    <todo-item
+      class="text-container"
+      v-for="todo in todos"
+      :key="todo.text"
+      :item="todo"
+    />
+  </view>
+</template>
+```
+```js
+<script>
+import TodoItem from "./todoItem";
+export default {
+  components: { TodoItem },
+  data: function() {
+    return {
+      todos: [
+        { id: 1, text: "Learn JavaScript" },
+        { id: 2, text: "Learn Vue" },
+        { id: 3, text: "Build something awesome" }
+      ]
+    };
+  }
+};
+</script>
+```
+```css
+<style>
+.container {
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+.text-container {
+  color: blue;
+  padding: 2;
+  font-size: 22;
+}
+.text-input-container {
+  width: 300;
+  height: 40;
+  font-size: 22;
+  border-color: gray;
+}
+</style>
+```
+
+<div class="hello-world-container">
+  <div class="hello-world-wrapper">
+    <img src="/images/todo_item.png" class="img-wrapper" />
+  </div>
+</div>
 
 This is a contrived example, but we have managed to separate our app into two smaller units, and the child is reasonably well-decoupled from the parent via the props interface. We can now further improve our `<todo-item>` component with more complex template and logic without affecting the parent app.
 
-In a large application, it is necessary to divide the whole app into components to make development manageable. We will talk a lot more about components [later in the guide](components.html), but here's an (imaginary) example of what an app's template might look like with components:
+In a large application, it is necessary to divide the whole app into components to make development manageable. We will talk a lot more about components, but here's an (imaginary) example of what an app's template might look like with components:
 
 ``` html
-<div id="app">
+<view>
   <app-nav></app-nav>
   <app-view>
     <app-sidebar></app-sidebar>
     <app-content></app-content>
   </app-view>
-</div>
+</view>
 ```
 
 ### Relation to Custom Elements
 
-You may have noticed that Vue components are very similar to **Custom Elements**, which are part of the [Web Components Spec](https://www.w3.org/wiki/WebComponents/). That's because Vue's component syntax is loosely modeled after the spec. For example, Vue components implement the [Slot API](https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md) and the `is` special attribute. However, there are a few key differences:
-
-1. The Web Components Spec is still in draft status, and is not natively implemented in every browser. In comparison, Vue components don't require any polyfills and work consistently in all supported browsers (IE9 and above). When needed, Vue components can also be wrapped inside a native custom element.
-
-2. Vue components provide important features that are not available in plain custom elements, most notably cross-component data flow, custom event communication and build tool integrations.
+You may have noticed that Vue Native components are very similar to [**React Native Components**](https://facebook.github.io/react-native/docs/getting-started.html). You can use All React Native Component, by making use of the `kebab case (hyphen-delimited)` equivalent components. This is because Vue Native is a wrapper around the React Native APIs.
 
 ## Ready for More?
 
-We've briefly introduced the most basic features of Vue.js core - the rest of this guide will cover them and other advanced features with much finer details, so make sure to read through it all!
-
-<div id="video-modal" class="modal"><div class="video-space" style="padding: 56.25% 0 0 0; position: relative;"><iframe src="https://player.vimeo.com/video/247494684" style="height: 100%; left: 0; position: absolute; top: 0; width: 100%; margin: 0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script></div>
+We've have briefly introduced the most basic features of Vue Native - we are making continuous efforts to improve our docs.
+Since Vue Native connects React Native and Vue.js, you can also go through [React Native Docs](https://facebook.github.io/react-native/docs/getting-started.html) and [Vue.js Docs](https://vuejs.org/v2/guide/).
