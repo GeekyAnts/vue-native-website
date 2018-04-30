@@ -71,7 +71,33 @@ You've successfully setup [Vue Native](http://vuenativedocs.geekydev.com) with y
 
 Check out the [KitchenSink Vue Native App](https://github.com/GeekyAnts/KitchenSink-Vue-Native) an example which demonstrate different usages of [Vue Native](http://vuenativedocs.geekydev.com) and [NativeBase](https://nativebase.io).
 
-** Step 4 Running The App **
+** Step 4 Create A Vue File **
+Remove the Content of the `App.js` file and rename `App.js` file with `App.vue`.
+
+Now Copy and paste the below code:
+
+```
+<template>
+  <view class="container">
+    <text class="text-color-primary">My Vue Native App</text>
+    </view>
+</template>
+
+<style>
+.container {
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+.text-color-primary {
+  color: blue;
+}
+</style>
+
+```
+
+** Step 5 Running The App **
 
 ```
 react-native run-ios
