@@ -62,7 +62,7 @@ function download (file) {
           `\n${body.toString()}`
         )
       }
-      fs.writeFile(`themes/vue/source/js/${file}`, body, err => {
+      fs.writeFile(`themes/vueNative/source/js/${file}`, body, err => {
         if (err) return reject(err)
         zlib.gzip(body, (err, zipped) => {
           if (err) return reject(err)
