@@ -14,16 +14,12 @@
         <input type="text" id="search-query-menu" class="search-query st-default-search-input">
       </form>
       <%- partial('partials/toc', { type: 'guide' }) %>
-    <% }
+    <% }%>
   <% } %>
   <% if (page.title.trim()) { %>
     <h1><%- page.title %><%- page.type === 'examples' ? ' Example' : '' %></h1>
   <% } %>
-  <% if (page.sponsors) { %>
-    <%- partial('sponsors-page') %>
-  <% } else { %>
-    <%- page.content %>
-  <% } %>
+  <%- page.content %>
   <% if (page.type === 'guide') { %>
     <div class="guide-links">
       <% const lastPage = site.pages.find({ type: page.type, order: { $lt: page.order }}).sort({ order: -1 }).first(); %>
