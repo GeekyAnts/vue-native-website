@@ -13,6 +13,45 @@ This page will help you install and build your first native app using [Vue Nativ
 * Globally installed [npm](https://www.npmjs.com/) >= 4.0
 * Globally installed [React Native CLI](https://facebook.github.io/react-native/docs/getting-started.html) which allow you to easily create and initialize projects.
 
+## Setup with Vue Native Cli
+
+[Vue Native Cli](https://github.com/GeekyAnts/vue-native-cli) is the easiest way to start building a application using [Vue Native](http://vuenativedocs.geekydev.com).
+
+Assuming that you have globally installed [create-react-native-app](https://github.com/react-community/create-react-native-app).
+
+** Step 1 Running The App **
+
+```
+npm install -g vue-native-cli
+vue-native init <projectName> // Initializes crna project
+vue-native init <projectName> --no-crna // Initializes react-native project
+cd <project-name>
+```
+
+** Step 2 Running The App **
+
+```
+npm start
+
+```
+Runs your app in development mode with an interactive prompt. To run it without a prompt, use the --no-interactive flag.
+Open it in the [Expo app](https://expo.io/) on your phone to view it. It will reload if you save edits to your files, and you will see build errors and logs in the terminal.
+
+```
+npm run ios
+
+```
+
+Like npm start, but also attempts to open your app in the iOS Simulator if you're on a Mac and have it installed.
+
+```
+npm run android
+
+```
+
+Like npm start, but also attempts to open your app on a connected Android device or emulator. Requires an installation of Android build tools (see [React Native docs](https://facebook.github.io/react-native/docs/getting-started.html)) for detailed setup).
+
+
 ## Setup with React Native
 
 ** Step 1 Create React Native Project **
@@ -113,40 +152,3 @@ react-native run-android
 
 
 For details installation, please refer to [Getting Started With React Native Docs](https://facebook.github.io/react-native/docs/getting-started.html)  
-
-## Setup with Vue Native Cli
-
-[Vue Native Cli](https://github.com/GeekyAnts/vue-native-cli) is the easiest way to start building a application using [Vue Native](http://vuenativedocs.geekydev.com).
-
-Assuming that you have globally installed [create-react-native-app](https://github.com/react-community/create-react-native-app).
-
-** Step 1 Running The App **
-
-```
-npm install -g vue-native-cli
-vue-native init <projectName>
-cd <project-name>
-```
-
-** Step 2 Running The App **
-
-```
-npm start
-
-```
-Runs your app in development mode with an interactive prompt. To run it without a prompt, use the --no-interactive flag.
-Open it in the [Expo app](https://expo.io/) on your phone to view it. It will reload if you save edits to your files, and you will see build errors and logs in the terminal.
-
-```
-npm run ios
-
-```
-
-Like npm start, but also attempts to open your app in the iOS Simulator if you're on a Mac and have it installed.
-
-```
-npm run android
-
-```
-
-Like npm start, but also attempts to open your app on a connected Android device or emulator. Requires an installation of Android build tools (see [React Native docs](https://facebook.github.io/react-native/docs/getting-started.html)) for detailed setup).
