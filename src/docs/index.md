@@ -408,10 +408,6 @@ In a large application, it is necessary to divide the whole app into components 
 
 You may have noticed that Vue Native components are very similar to [**React Native Components**](https://facebook.github.io/react-native/docs/getting-started.html). You can use All React Native Component, by making use of the `kebab case (hyphen-delimited)` equivalent components. This is because Vue Native is a wrapper around the React Native APIs.
 
-## Vue Native Router
-
-To let users handle the routing same way as in vuejs, We've provided a vuejs plugin [Vue Native Router](https://github.com/GeekyAnts/vue-native-router). It's based on [React Navigation](https://reactnavigation.org/)
-Here's the sample app where we have used the plugin [KitchenSink](https://github.com/GeekyAnts/KitchenSink-Vue-Native)
 
 ## Ready for More?
 
