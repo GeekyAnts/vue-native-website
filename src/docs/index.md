@@ -4,6 +4,8 @@ type: guide
 order: 2
 ---
 
+<iframe src="//slides.com/gauravp/vue-native/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 First of all we would like to thank SmallComfort (https://github.com/SmallComfort/react-vue) for their efforts in creating the compiler.
 ## What is Vue Native?
 Vue Native is a mobile framework to build truly native mobile app using [Vue.js](https://vuejs.org/). Its is designed to connect [React Native](https://facebook.github.io/react-native) and Vue.js.
@@ -406,7 +408,13 @@ In a large application, it is necessary to divide the whole app into components 
 
 You may have noticed that Vue Native components are very similar to [**React Native Components**](https://facebook.github.io/react-native/docs/getting-started.html). You can use All React Native Component, by making use of the `kebab case (hyphen-delimited)` equivalent components. This is because Vue Native is a wrapper around the React Native APIs.
 
+## Vue Native Router
+
+To let users handle the routing same way as in vuejs, We've provided a vuejs plugin [Vue Native Router](https://github.com/GeekyAnts/vue-native-router). It's based on [React Navigation](https://reactnavigation.org/)
+Here's the sample app where we have used the plugin [KitchenSink](https://github.com/GeekyAnts/KitchenSink-Vue-Native)
+
 ## Ready for More?
 
 We've have briefly introduced the most basic features of Vue Native - we are making continuous efforts to improve our docs.
 Since Vue Native connects React Native and Vue.js, you can also go through [React Native Docs](https://facebook.github.io/react-native/docs/getting-started.html) and [Vue.js Docs](https://vuejs.org/v2/guide/).
+To implement state management using Vuex, you can also go through [Vuex](https://vuex.vuejs.org/guide/).
