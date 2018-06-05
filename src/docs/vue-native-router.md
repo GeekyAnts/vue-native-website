@@ -19,6 +19,7 @@ Here's the sample app where we have used the plugin [KitchenSink](https://github
 ```
 ```js
 <script>
+import { StackNavigator } from "vue-native-router";
 const RootStack = StackNavigator(
   {
     Home: HomeScreen,
@@ -37,6 +38,22 @@ export default {
 ## Moving in between screens
 Since the navigation is available as prop within the child components. We can use something like `this.navigation.navigate("Home");` to switch from one screen to another.
 You can also pass data to routes when we navigate. The syntax is `this.navigation.navigate("RouteName", {/* params go here */ });`
+```js
+<script>
+export default {
+  props: {
+    navigation: {
+      type: Object
+    }
+  },
+  methods: {
+    handleLetGoBtnPress: function() {
+      this.navigation.navigate("Home");
+    }
+  }
+}
+</script>
+```
 
 ### Going back
 It is possible to go back from the active screen if there is any. We can trigger it using `this.navigation.goBack()`.
