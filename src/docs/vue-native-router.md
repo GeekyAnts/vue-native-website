@@ -9,13 +9,12 @@ gz_size: "30.67"
 ## Instructions
 
 To let users handle the routing, We've provided a vuejs plugin [Vue Native Router](https://github.com/GeekyAnts/vue-native-router). It's based on [React Navigation](https://reactnavigation.org/)
+You can use install the package using the command `npm install vue-native-router`
 Here's the sample app where we have used the plugin [KitchenSink](https://github.com/GeekyAnts/KitchenSink-Vue-Native)
 
 ```html
 <template>
-    <root>
-      <app-navigation></app-navigation>
-    </root>
+  <app-navigation></app-navigation>
 </template>
 ```
 ```js

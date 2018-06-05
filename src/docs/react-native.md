@@ -1,5 +1,5 @@
 ---
-title: Composing with components
+title: React Native
 type: guide
 order: 7
 vue_version: 2.5.13
