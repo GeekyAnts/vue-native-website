@@ -263,6 +263,6 @@ WebView renders web content in a native view.
 </template>
 ```
 
-### Further Components and Details
+### Further Details
 
 For further details about different components and API's in depth, you can refer to https://facebook.github.io/react-native/
