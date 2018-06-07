@@ -6,7 +6,7 @@ vue_version: 2.5.13
 gz_size: "30.67"
 ---
 
-#### View
+### View
 The most fundamental component for building a UI, View is a container that supports layout
 `View` is designed to be nested inside other views and can have 0 to many children of any type.
 
@@ -227,3 +227,38 @@ This is a controlled component that requires an `on-value-change` callback that 
 
 ### TouchableOpacity
 
+A wrapper for making views respond properly to touches. On press down, the opacity of the wrapped view is decreased, dimming it.
+
+```
+<template>
+    <touchable-opacity :on-press="onPressButton">
+      <image
+        :style={align-items: 'center', background-color: '#DDDDDD'}
+        :source={require('./myButton.png')}
+      />
+    </touchable-opacity>
+</template>
+
+<script>
+    export default {
+        methods: {
+            onPressButton: () => {
+                alert('Clicked Image')
+            }
+        }
+    }
+</script>
+```
+
+### WebView
+
+WebView renders web content in a native view.
+
+```
+<template>
+    <web-view
+        :source={uri: 'https://github.com/facebook/react-native'}
+        :style={marginTop: 20}
+    />
+</template>
+```
