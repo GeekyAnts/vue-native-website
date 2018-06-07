@@ -6,7 +6,16 @@ vue_version: 2.5.13
 gz_size: "30.67"
 ---
 
-React Native is an open source framework for building truly native mobile application for IOS and Android platform using JavaScript.
+Vue Native transpiles to React Native. React Native is a framework to build native Android and iOS apps using JavaScript.
+
+*So, you can one-to-one map Vue Native components to React Native components.*
+
+What changes in Vue Native (when compared to React Native)?
+• You write .vue files instead of .js
+• Any .vue file has three parts which are `<template />, <style /> and <script />`
+• With `template` and `style` section we use hyphen-case and Pascal case in the script section. This includes the name of the component, style properties and style names
+
+Vue Native is like a syntactic sugar for React Native.
 
 ## Relation to Custom Elements
 

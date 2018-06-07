@@ -129,9 +129,18 @@ One of the drawbacks using Flatlist is the renderItem method should return JSX w
 <template>
     <flat-list
         :data="{[{key: 'a'}, {key: 'b'}]}"
-        :render-item="{({item}) => <Text>{item.key}</Text>}"
+        :render-item="{({item}) => renderList(item)"
     />
 </template>
+<script>
+    export default {
+        methods: {
+            renderList: (item) => {
+                return (<Text>{item}<Text>)
+            }
+        }
+    }
+</script>
 ```
 
 ### ActivityIndicator
