@@ -37,15 +37,15 @@ A Vue Native component for displaying different types of images, including netwo
 <template>
     <view>
         <image
-          :source={require('/vue-native/img/favicon.png')}
+          :source="{require('/vue-native/img/favicon.png')}"
         />
         <image
-          :style={width: 50, height: 50}
-          :source={uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}
+          :style="{width: 50, height: 50}"
+          :source="{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}"
         />
         <image
-          :style={width: 66, height: 58}
-          :source={uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg=='}
+          :style="{width: 66, height: 58}"
+          :source="{uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg=='}"
         />
       </view>
 </template>
@@ -57,7 +57,7 @@ A foundational component for inputting text into the app via a keyboard. Props p
 ```
 <template>
     <text-input
-        style={height: 40, borderColor: 'gray', borderWidth: 1}
+        :style="{height: 40, border-color: 'gray', border-width: 1}"
         v-model="text"
       />
 </template>
@@ -79,9 +79,9 @@ ScrollView simply renders all its react child components at once. That makes it 
 
 ```
 <template>
-    <scroll-view :content-container-style={contentContainer: {
-        paddingVertical: 20
-    }}>
+    <scroll-view :content-container-style="{contentContainer: {
+        padding-vertical: 20
+    }}">
         // Content goes here
     </scroll-view>
 </template>
@@ -93,10 +93,10 @@ A basic button component that should render nicely on any platform. Supports a m
 ```
 <template>
     <button
-        :on-press={onPressLearnMore}
-        :title="'Learn More'"
-        :color="'#841584'"
-        :accessibility-label="'Learn more about this purple button'"
+        :on-press="onPressLearnMore"
+        title="Learn More"
+        color="#841584"
+        accessibility-label="Learn more about this purple button"
     />
 </template>
 <script>
@@ -128,8 +128,8 @@ One of the drawbacks using Flatlist is the renderItem method should return JSX w
 ```
 <template>
     <flat-list
-        :data={[{key: 'a'}, {key: 'b'}]}
-        :render-item={({item}) => <Text>{item.key}</Text>}
+        :data="{[{key: 'a'}, {key: 'b'}]}"
+        :render-item="{({item}) => <Text>{item.key}</Text>}"
     />
 </template>
 ```
@@ -140,8 +140,8 @@ Displays a circular loading indicator.
 
 ```
 <template>
-    <view :style={flex: 1, justify-content: 'center'}>
-        <activity-indicator :size="'large'" :color="'#0000ff'" />
+    <view :style="{flex: 1, justify-content: 'center'}">
+        <activity-indicator size="large" color="#0000ff" />
     </view>
 </template>
 ```
@@ -155,10 +155,10 @@ Optionally provide a list of buttons. Tapping any button will fire the respectiv
 ```
 <template>
     <button
-        :on-press={onPressLearnMore}
-        :title="'Learn More'"
-        :color="'#841584'"
-        :accessibility-label="'Learn more about this purple button'"
+        :on-press="onPressLearnMore"
+        title="Learn More"
+        color="#841584"
+        accessibility-label="Learn more about this purple button"
     />
 </template>
 <script>
@@ -233,8 +233,8 @@ A wrapper for making views respond properly to touches. On press down, the opaci
 <template>
     <touchable-opacity :on-press="onPressButton">
       <image
-        :style={align-items: 'center', background-color: '#DDDDDD'}
-        :source={require('./myButton.png')}
+        :style="{align-items: 'center', background-color: '#DDDDDD'}"
+        :source="{require('./myButton.png')}"
       />
     </touchable-opacity>
 </template>
@@ -257,8 +257,12 @@ WebView renders web content in a native view.
 ```
 <template>
     <web-view
-        :source={uri: 'https://github.com/facebook/react-native'}
-        :style={marginTop: 20}
+        :source="{uri: 'https://github.com/facebook/react-native'}
+        :style="{marginTop: 20}"
     />
 </template>
 ```
+
+### Further Components and Details
+
+For further details about different components and API's in depth, you can refer to https://facebook.github.io/react-native/
