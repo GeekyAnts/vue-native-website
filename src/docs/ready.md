@@ -1,7 +1,7 @@
 ---
 title: Ready for more?
 type: guide
-order: 9
+order: 10
 vue_version: 2.5.13
 gz_size: "30.67"
 ---

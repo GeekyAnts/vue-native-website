@@ -1,7 +1,7 @@
 ---
 title: Conditionals and Loops
 type: guide
-order: 5
+order: 6
 vue_version: 2.5.13
 gz_size: "30.67"
 ---
