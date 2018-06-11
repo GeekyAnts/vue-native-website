@@ -20,8 +20,9 @@ Before submitting a pull request, please make sure the following is done:
 
 1. Fork the repository `git clone git@github.com:GeekyAnts/vue-native-core.git` and create your branch from master.
 2. Run npm install in the repository root.
-3. Create a sample project using vue-native-cli.
-4. There are multiple modules which you can modify
+3. Create a sample app using vue-native-cli separately outside the project repository.
+4. Within the project repository, go to packages folder `vue-native-core/packages`
+5. There are multiple modules which you can modify
     * react-vue-helper
     * react-vue-template-compiler
     * react-vue
@@ -29,7 +30,7 @@ Before submitting a pull request, please make sure the following is done:
     * vue-template-compiler
     * weex-template-compiler
     * weex-vue-framework
-6. If you want modify the mobile app compiler. Then you would've to use vue-template-compiler or vue-native-helper based on your requirements
-5. run `npm link <the-package-you-want-to-modify> <the-package-you-want-to-modify> `
+6. If you want modify the mobile app compiler. Then you would've to use vue-template-compiler or vue-native-helper based on your requirements. Update the build.js file accordingly.
+7. run `npm link <the-package-you-want-to-modify> `
 6. Format your code with prettier
 7. Run the app and test the code before you commit and create a pull request
