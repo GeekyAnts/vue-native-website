@@ -1,12 +1,12 @@
 ---
-title: How does it work
+title: How does it work?
 type: guide
 order: 12
 vue_version: 2.5.13
 gz_size: "30.67"
 ---
 
-## This is fork of [react-vue](https://github.com/GeekyAnts/vue-native-core)
+This is fork of [react-vue](https://github.com/GeekyAnts/vue-native-core)
 
 Vue-native-core is designed to connect React and Vue, which help you run Vue in React.
 
@@ -15,7 +15,6 @@ There are three uses.
 * Use the [reactivity system](https://github.com/SmallComfort/react-vue/blob/dev/README.md#reactivity-system) of Vue to observer React component
 * Use the [react-vue-loader](https://github.com/SmallComfort/react-vue/blob/dev/README.md#vue-component) to run Vue component in React application
 * Use the [vue-native-scripts](https://github.com/SmallComfort/react-vue/blob/dev/README.md#native) to run Vue component in React Native
-* Use the `vue-native-cli` to generate a Vue Native App
 
 ### Reactivity System
 

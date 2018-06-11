@@ -7,7 +7,7 @@ gz_size: "30.67"
 ---
 
 ## Open Development
-All work on React happens directly on GitHub. Both core team members and external contributors send pull requests which go through the same review process.
+All work on Vue Native happens directly on GitHub. Both core team members and external contributors send pull requests which go through the same review process.
 
 ## Your First Pull Request
 Working on your first Pull Request? You can learn how from this free video series:
@@ -18,6 +18,18 @@ The core team is monitoring for pull requests. We will review your pull request 
 
 Before submitting a pull request, please make sure the following is done:
 
-1. Fork the repository and create your branch from master.
+1. Fork the repository `git clone git@github.com:GeekyAnts/vue-native-core.git` and create your branch from master.
 2. Run npm install in the repository root.
-3. Format your code with prettier
+3. Create a sample project using vue-native-cli.
+4. There are multiple modules which you can modify
+    * react-vue-helper
+    * react-vue-template-compiler
+    * react-vue
+    * vue-server-renderer
+    * vue-template-compiler
+    * weex-template-compiler
+    * weex-vue-framework
+6. If you want modify the mobile app compiler. Then you would've to use vue-template-compiler or vue-native-helper based on your requirements
+5. run `npm link <the-package-you-want-to-modify> <the-package-you-want-to-modify> `
+6. Format your code with prettier
+7. Run the app and test the code before you commit and create a pull request
