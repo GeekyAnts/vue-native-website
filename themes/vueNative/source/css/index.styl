@@ -130,6 +130,7 @@ body
 
 
 @media screen and (max-width: $width)
+ 
   body
     -webkit-text-size-adjust: none
     font-size: 14px
@@ -137,6 +138,10 @@ body
     display: block
   #mobile-bar
     display: block
+  .flex-column
+    flex-direction:column
+    align-items:center
+  
   #hero
     padding: $space 40px 30px
     .hero-logo
@@ -167,7 +172,3 @@ body
       &:before
         content: "—"
         color: $green
-.flex-column{
-  flex-direction:column
-  align-items:center
-}
