@@ -16,7 +16,7 @@ Create a .vue file and copy and paste the below content.
 <template>
   <view class="container">
     <text class="text-color-primary">{{message}}</text>
-    </view>
+  </view>
 </template>
 ```
 
