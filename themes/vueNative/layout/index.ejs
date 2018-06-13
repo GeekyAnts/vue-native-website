@@ -1,55 +1,97 @@
-<div class="sidebar">
-  <div class="sidebar-inner-index">
-    <ul class="main-menu">
-      <%- partial('partials/main_menu', { context: 'sidebar' }) %>
-    </ul>
-  </div>
-</div>
-
-
 <div id="hero">
-  <div class="inner">
-    <div class="left">
-      <img class="hero-logo" src="<%- url_for("/images/logo.png") %>">
-    </div><div class="right">
-      <h2 class="vue">Vue Native</h2>
-      <h1>
-        Build native mobile apps using JavaScript and VueJs
-        <!-- The Progressive<br>JavaScript Framework For Mobile App -->
-      </h1>
-      <p>
-        <a class="button white" href="<%- url_for("/docs/installation.html") %>">GET STARTED</a>
-        <a class="button gray has-icon" href="https://github.com/GeekyAnts/vue-native-core" target="_blank">
-          <%- partial('icons/github-dark') %>
-          GITHUB</a>
-          <!-- Place this tag where you want the button to render. -->
-        <a class="github-button" href="https://github.com/GeekyAnts/vue-native-core" data-icon="octicon-star" data-show-count="true" aria-label="Star GeekyAnts/vue-native-core on GitHub">Star</a>
-      </p>
-    </div>
-  </div>
-  <div style="display: flex;justify-content: space-between;" class="flex-column">
-    <div>
-      <div style="font-size: 22px">Quick hello world Example</div>
-      <figure class="highlight html" style="margin-left: 0;"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text-color-primary"</span>&gt;</span>{{message}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-      <figure class="highlight js" style="margin-left: 0;"><table><tbody><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> {</span><br><span class="line">  data: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span><br><span class="line">    <span class="keyword">return</span> {</span><br><span class="line">      message: <span class="string">"Hello World"</span></span><br><span class="line">    };</span><br><span class="line">  }</span><br><span class="line">};</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-      <figure class="highlight" style="margin-left: 0;"><table><tbody><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="selector-class">.container</span> {</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: white;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">}</span><br><span class="line"><span class="selector-class">.text-color-primary</span> {</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">30</span>;</span><br><span class="line">}</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></tbody></table></figure>
-    </div>
-    <div class="hello-world-container" style="max-width: 350px;">
-      <div class="hello-world-wrapper" style="margin-top: 30px">
-        <img src="/images/hello_world.jpg" class="img-wrapper"  style="width: 100%; height: auto"/>
+   <div class="hero-inner">
+      <div class="inner">
+         <div class="text-center herologo">
+            <img  src="<%- url_for("/images/logo.png") %>">
+            <p>Vue Native</p>
+         </div>
+         <div class="text-center intro">
+            Vue Native is a framework to build cross platform
+            native mobile apps using JavaScript
+         </div>
+         <div class="flex-wrap get-started">
+            <div>
+               <a class="button green" href="<%- url_for("/docs/installation.html") %>">GET STARTED</a>
+            </div>
+            <div>
+               <a class="button gray has-icon" href="https://github.com/GeekyAnts/vue-native-core" target="_blank">
+               <%- partial('icons/github-dark') %>
+               GITHUB</a>
+            </div>
+            <!-- Place this tag where you want the button to render. -->
+            <div class="github-start-btn">
+               <a class="github-button" href="https://github.com/GeekyAnts/vue-native-core" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star GeekyAnts/vue-native-core on GitHub">Star</a>
+            </div>
+         </div>
+         <div class="vue-exam" >
+            <div class="title">Hello World Example</div>
+            <img src="/images/landing.png" class="img-wrapper"  style="width: 100%; height: auto"/>
+            <!-- 
+               <div>
+                 <div style="font-size: 22px">Quick hello world Example</div>
+                 <figure class="highlight html" style="margin-left: 0;"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text-color-primary"</span>&gt;</span>{{message}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+                 <figure class="highlight js" style="margin-left: 0;"><table><tbody><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> {</span><br><span class="line">  data: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span><br><span class="line">    <span class="keyword">return</span> {</span><br><span class="line">      message: <span class="string">"Hello World"</span></span><br><span class="line">    };</span><br><span class="line">  }</span><br><span class="line">};</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+                 <figure class="highlight" style="margin-left: 0;"><table><tbody><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="selector-class">.container</span> {</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: white;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">}</span><br><span class="line"><span class="selector-class">.text-color-primary</span> {</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">30</span>;</span><br><span class="line">}</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></tbody></table></figure>
+               </div> -->
+            <!--   <div class="hello-world-container" style="max-width: 350px;">
+               <div class="hello-world-wrapper" style="margin-top: 30px">
+                 <img src="/images/hello_world.jpg" class="img-wrapper"  style="width: 100%; height: auto"/>
+               </div>
+               </div> -->
+         </div>
       </div>
-    </div>
-  </div>
-  <div style="text-align: left;font-size: 22px;">More examples</div>
-  <div style="display: flex">
-    <div style="text-align: left;font-size: 22px;">
-      <a class="button white" style="padding: 0.25em 0.5em;font-size: 0.9em;" target="_blank" href="https://github.com/ankitsinghania94/vue-native-todo-app">Todo App</a>
-    </div>
-    <div style="text-align: left;font-size: 22px;">
-      <a class="button white" style="padding: 0.25em 0.5em;font-size: 0.9em;" target="_blank" href="https://github.com/GeekyAnts/KitchenSink-Vue-Native">Kitchen Sink App</a>
-    </div>
-  </div>
-  <div>
-    <iframe src="//slides.com/gauravp/vue-native/embed" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-  </div>
+   </div>
+   <div class="blog-secton m-t-50">
+      <div class="title">Blogs</div>
+      <div class="card">
+         <a href="https://blog.geekyants.com/introducing-vue-native-b66f71d50438" target="blank">
+            <h2>Introducing Vue Native</h2>
+            <small>12 June 2018 </small>
+         </a>
+      </div>
+   </div>
+   <div class="exam-app m-t-50">
+      <div class="title">Example Apps</div>
+      <div style="display: flex;" class="flex-column exam-app" >
+         <div class="card" style="margin-right:30px;">
+            <h4><a  target="_blank" href="https://github.com/ankitsinghania94/vue-native-todo-app">Todo App</a></h4>
+            <p>Good example for two-way binding, loops and local data.</p>
+            <img src="/images/to-do.gif"/>
+         </div>
+         <div class="card">
+            <h4> <a  target="_blank" href="https://github.com/GeekyAnts/KitchenSink-Vue-Native">Kitchen Sink App</a></h4>
+            <p>A good set of UI screens with the help of NativeBase library.</p>
+            <img src="/images/kitchenSink.gif"/>
+         </div>
+      </div>
+   </div>
+   <div style="display:flex" class="flex-column">
+      <div class="key-feature">
+         <div class="title">Key features</div>
+         <ul>
+            <li>Declarative rendering</li>
+            <li>  Two-way binding</li>
+            <li>  Goodness of Vue ecosystem</li>
+            <li>Compiles to React Native</li>
+            <li> Completeness of React Native ecosystem</li>
+         </ul>
+      </div>
+      <div class="key-feature">
+         <div class="title">Roadmap</div>
+         <ul>
+            <li>Provide List without JSX</li>
+            <li>  Support for Animation</li>
+            <li> Better Debugging & Tracing</li>
+         </ul>
+      </div>
+   </div>
+   <div style="padding:100px 0px">
+      <div class="text-center">
+         <div class="start-build">Start building!</div>
+         <a class="button green" href="/docs/installation.html">GET STARTED</a>
+      </div>
+   </div>
+   <div class="text-center" style="padding-bottom:50px;">
+      <p>Vue Native was originally started by SmallComfort as react-vue and GeekyAnts has forked it.</p>
+   </div>
 </div>

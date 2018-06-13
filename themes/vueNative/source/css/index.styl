@@ -14,7 +14,18 @@ html
 body
   display: flex
   flex-direction: column
+#header
+ display:none
+.title
+  font-size: 18px;
+  line-height: 26px;
 
+.m-t-50
+ margin-top:50px
+.card
+ background: #f2f2f2;
+ padding: 25px 40px;
+ margin: 20px 0px;
 #logo
   span
     font-size: 1.2em
@@ -31,14 +42,40 @@ body
     display: none
     .logo
       display: none
+.text-center
+  text-align:center
 
+.flex-wrap
+  display: flex;
+  align-items: center;
+  justify-content:center
+  &.get-started
+    div
+      margin-right:15px
+   
+.key-feature
+ width:50%
+ ul
+  padding-left:15px
+ .title
+  font-size:24px
+  margin-bottom:20px
+ li
+  font-size:18px
+  line-height:34px
+.start-build
+ font-size:32px;
+ color:#6a6a6a;
 #hero
-  padding: $space 40px 30px
   background-color: #fff
-  max-width: 870px;
+  max-width: 884px
   margin: 0 auto;
+  padding-top:120px
+  .hero-inner
+   border-bottom:2px solid #f2f2f2
   .inner
-    margin: 50px;
+    margin: 0 auto;
+    max-width:598px
   .left, .right
     display: inline-block
     vertical-align: top
@@ -46,21 +83,44 @@ body
     width: 39%
   .right
     width: 61%
-  .hero-logo
-    width: 215px
-    height: 215px
-    float: right
-    margin-right: 60px
+  .herologo
+    display:flex
+    height:67px
+    justify-content:center
+    align-items:center
+    img
+     width:100px
+     height:auto
+
+    p
+     font-family: $logo-font
+     font-weight: 300
+     font-size: 45px
+     margin-left: 20px
+
+  .intro
+   font-size: 26px
+   line-height: 37px
+   padding: 50px 0px 15px 0px
+   color:#6a6a6a
+  .vue-exam
+   margin-top:30px
+   img
+    display:table
+    vertical-align:bottom
+    
+
   h1
     font-weight: 300
     margin: 0
     font-size: 3.2em
   h2
-    font-family: $logo-font
-    font-weight: 500
-    font-size: 2.4em
-    margin: 0 0 10px
-    display: none
+   font-weight: 500;
+   font-size: 38px;
+   margin: 0;
+   line-height: 50px;
+   color: #333;
+
   .button
     margin: 1em 0.1em
     font-size: 1.05em
@@ -68,6 +128,8 @@ body
     letter-spacing: .1em
     min-width: 8em
     text-align: center
+    &.green
+     background:$green
     &:not(:last-child)
       margin-right: 1%
   .social-buttons
@@ -127,6 +189,21 @@ body
   a
     font-weight: 700
     color: #fff
+.exam-app
+    justify-content: space-around;
+    margin-bottom: 50px;
+  img
+    height:600px
+    width:100%
+  .app-name
+    background: #42b983
+    width: 100%
+    display: block
+    padding: 8px 0
+    text-align: center
+    color: #fff
+  
+
 
 
 @media screen and (max-width: $width)
