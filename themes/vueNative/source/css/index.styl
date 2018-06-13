@@ -28,13 +28,14 @@ body
   &.top
     background-color: transparent
     box-shadow: none
+    display: none
     .logo
       display: none
 
 #hero
   padding: $space 40px 30px
   background-color: #fff
-  width: 870px;
+  max-width: 870px;
   margin: 0 auto;
   .inner
     margin: 50px;
@@ -127,14 +128,13 @@ body
     font-weight: 700
     color: #fff
 
+
 @media screen and (max-width: $width)
   body
     -webkit-text-size-adjust: none
     font-size: 14px
   .sidebar
     display: block
-  #header
-    display: none
   #mobile-bar
     display: block
   #hero
@@ -167,3 +167,7 @@ body
       &:before
         content: "—"
         color: $green
+.flex-column{
+  flex-direction:column
+  align-items:center
+}
