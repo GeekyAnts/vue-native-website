@@ -133,7 +133,7 @@ One of the drawbacks using Flatlist is the renderItem method should return JSX w
 <template>
     <flat-list
         :data="{[{key: 'a'}, {key: 'b'}]}"
-        :render-item="{({item}) => renderList(item)"
+        :render-item="({item}) => renderList(item)"
     />
 </template>
 ```
