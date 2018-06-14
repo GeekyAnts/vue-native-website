@@ -6,6 +6,7 @@
 
 $width = 900px
 $space = 40px
+$sm-width = 420px
 
 html
   height: 100%
@@ -44,7 +45,9 @@ body
       display: none
 .text-center
   text-align:center
-
+p
+ a
+  color:$green
 .flex-wrap
   display: flex;
   align-items: center;
@@ -218,9 +221,11 @@ body
   .flex-column
     flex-direction:column
     align-items:center
-  
+  .card
+   margin-right:0 !important
   #hero
-    padding: $space 40px 30px
+    padding: 40px 10px
+    width: 90%
     .hero-logo
       float: none
       margin: 30px 0 15px
@@ -249,3 +254,13 @@ body
       &:before
         content: "—"
         color: $green
+@media screen and (max-width: $sm-width)
+ body
+  .get-started
+    flex-direction: column;
+    div
+     margin-right:0 !important
+  #hero
+   .herologo 
+    p
+     margin-left:0
