@@ -1,129 +1,149 @@
-
 <div id="hero">
-   <div class="hero-inner">
-      <div class="inner">
-         <div class="text-center herologo">
-            <img  src="<%- url_for("/images/logo.png") %>">
-            <p>Vue Native</p>
-         </div>
-         <div class="text-center intro">
-            Vue Native is a framework to build cross platform
-            native mobile apps using JavaScript
-         </div>
-         <div class="flex-wrap get-started">
-            <div>
-               <a class="button green" href="<%- url_for("/docs/installation.html") %>">GET STARTED</a>
+    <div class="hero-inner">
+        <div class="inner">
+            <div class="text-center herologo">
+                <img src="<%- url_for(" /images/logo.png ") %>">
+                <p>Vue Native</p>
             </div>
-            <div>
-               <a class="button gray has-icon" href="https://github.com/GeekyAnts/vue-native-core" target="_blank">
-               <%- partial('icons/github-dark') %>
-               GITHUB</a>
+            <div class="text-center intro">
+                Vue Native is a framework to build cross platform native mobile apps using JavaScript
             </div>
-            <!-- Place this tag where you want the button to render. -->
-            <div class="github-start-btn">
-               <a class="github-button" href="https://github.com/GeekyAnts/vue-native-core" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star GeekyAnts/vue-native-core on GitHub">Star</a>
+            <div class="flex-wrap get-started">
+                <div>
+                    <a class="button green" href="<%- url_for(" /docs/installation.html ") %>">GET STARTED</a>
+                </div>
+                <div>
+                    <a class="button gray has-icon" href="https://github.com/GeekyAnts/vue-native-core" target="_blank">
+                        <%- partial('icons/github-dark') %>
+                            GITHUB</a>
+                </div>
+                <!-- Place this tag where you want the button to render. -->
+                <div class="github-start-btn">
+                    <a class="github-button" href="https://github.com/GeekyAnts/vue-native-core" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star GeekyAnts/vue-native-core on GitHub">Star</a>
+                </div>
             </div>
-         </div>
-         <div class="vue-exam" >
-            <div class="title">Hello World Example</div>
-            <img src="/images/landing.png" class="img-wrapper"  style="width: 100%; height: auto"/>
-            <!-- 
+            <div class="vue-exam">
+                <div class="title">Hello World Example</div>
+                <img src="/images/landing.png" class="img-wrapper" style="width: 100%; height: auto" />
+                <!-- 
                <div>
                  <div style="font-size: 22px">Quick hello world Example</div>
                  <figure class="highlight html" style="margin-left: 0;"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">"text-color-primary"</span>&gt;</span>{{message}}<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
                  <figure class="highlight js" style="margin-left: 0;"><table><tbody><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> {</span><br><span class="line">  data: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span><br><span class="line">    <span class="keyword">return</span> {</span><br><span class="line">      message: <span class="string">"Hello World"</span></span><br><span class="line">    };</span><br><span class="line">  }</span><br><span class="line">};</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></tbody></table></figure>
                  <figure class="highlight" style="margin-left: 0;"><table><tbody><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"><span class="selector-class">.container</span> {</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: white;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">}</span><br><span class="line"><span class="selector-class">.text-color-primary</span> {</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">30</span>;</span><br><span class="line">}</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></tbody></table></figure>
                </div> -->
-            <!--   <div class="hello-world-container" style="max-width: 350px;">
+                <!--   <div class="hello-world-container" style="max-width: 350px;">
                <div class="hello-world-wrapper" style="margin-top: 30px">
                  <img src="/images/hello_world.jpg" class="img-wrapper"  style="width: 100%; height: auto"/>
                </div>
                </div> -->
-         </div>
-      </div>
-   </div>
-   <div class="blog-secton m-t-50">
-      <div class="title">Blogs</div>
-      <div class="card">
-         <a href="https://blog.geekyants.com/introducing-vue-native-b66f71d50438" target="blank">
-            <h2>Introducing Vue Native</h2>
-            <small>12 June 2018 </small>
-         </a>
-      </div>
-   </div>
-   <div class="exam-app m-t-50">
-      <div class="title">Example Apps</div>
-      <div style="display: flex;" class="flex-column exam-app" >
-         <div class="card" style="margin-right:30px;">
-            <h4><a  target="_blank" href="https://github.com/ankitsinghania94/vue-native-todo-app">Todo App</a></h4>
-            <p>Good example for two-way binding, loops and local data.</p>
-            <img src="/images/to-do.gif"/>
-         </div>
-         <div class="card">
-            <h4> <a  target="_blank" href="https://github.com/GeekyAnts/KitchenSink-Vue-Native">Kitchen Sink App</a></h4>
-            <p>A good set of UI screens with the help of NativeBase library.</p>
-            <img src="/images/kitchenSink.gif"/>
-         </div>
-      </div>
-   </div>
-   <div style="display:flex" class="flex-column">
-      <div class="key-feature">
-         <div class="title">Key features</div>
-         <ul>
-            <li>Declarative rendering</li>
-            <li>  Two-way binding</li>
-            <li>  Goodness of Vue ecosystem</li>
-            <li>Compiles to React Native</li>
-            <li> Completeness of React Native ecosystem</li>
-         </ul>
-      </div>
-      <div class="key-feature">
-         <div class="title">Roadmap</div>
-         <ul>
-            <li>Provide List without JSX</li>
-            <li>  Support for Animation</li>
-            <li> Better Debugging & Tracing</li>
-         </ul>
-      </div>
-   </div>
-   <div style="padding:100px 0px">
-      <div class="text-center">
-         <div class="start-build">Start building!</div>
-         <a class="button green" href="/docs/installation.html">GET STARTED</a>
-      </div>
-   </div>
-   <div>
-     <div class="text-center">
-         <div class="start-build">Stay up to date </div>
-   
-
-<div id="mc_embed_signup">
-<form action="https://sahusoft.us10.list-manage.com/subscribe/post?u=1255321b94080746030fac796&amp;id=bb1b4104db" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-    <div id="mc_embed_signup_scroll">
-    
-<div class="mc-field-group">
-    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Enter Email">
-
-       <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1255321b94080746030fac796_bb1b4104db" tabindex="-1" value=""></div>
-    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button green"></div>
+            </div>
+        </div>
     </div>
+    <div class="blog-secton m-t-50">
+        <div class="title">Blogs</div>
+        <div class="card">
+            <a href="https://blog.geekyants.com/introducing-vue-native-b66f71d50438" target="blank">
+                <h2>Introducing Vue Native</h2>
+                <small>12 June 2018 </small>
+            </a>
+        </div>
     </div>
-     <div id="mce-responses" class="clear">
-        <div class="response" id="mce-error-response" style="display:none"></div>
-        <div class="response" id="mce-success-response" style="display:none"></div>
+    <div class="exam-app m-t-50">
+        <div class="title">Example Apps</div>
+        <div style="display: flex;" class="flex-column exam-app">
+            <div class="card" style="margin-right:30px;">
+                <h4><a target="_blank" href="https://github.com/ankitsinghania94/vue-native-todo-app">Todo App</a></h4>
+                <p>Good example for two-way binding, loops and local data.</p>
+                <img src="/images/to-do.gif" />
+            </div>
+            <div class="card">
+                <h4> <a target="_blank" href="https://github.com/GeekyAnts/KitchenSink-Vue-Native">Kitchen Sink App</a></h4>
+                <p>A good set of UI screens with the help of NativeBase library.</p>
+                <img src="/images/kitchenSink.gif" />
+            </div>
+        </div>
     </div>
-</form>
-</div>
- </div>
-  </div>
+    <div style="display:flex" class="flex-column">
+        <div class="key-feature">
+            <div class="title">Key features</div>
+            <ul>
+                <li>Declarative rendering</li>
+                <li> Two-way binding</li>
+                <li> Goodness of Vue ecosystem</li>
+                <li>Compiles to React Native</li>
+                <li> Completeness of React Native ecosystem</li>
+            </ul>
+        </div>
+        <div class="key-feature">
+            <div class="title">Roadmap</div>
+            <ul>
+                <li>Provide List without JSX</li>
+                <li> Support for Animation</li>
+                <li> Better Debugging & Tracing</li>
+            </ul>
+        </div>
+    </div>
+    <div style="padding:100px 0px">
+        <div class="text-center">
+            <div class="start-build">Start building!</div>
+            <a class="button green" href="/docs/installation.html">GET STARTED</a>
+        </div>
+    </div>
+    <div>
+        <div class="text-center">
+            <div class="start-build">Stay up to date </div>
 
-<!--End mc_embed_signup-->
-</div>
-   <div class="text-center" style="padding-bottom:50px;">
-              <p>Vue Native was originally started by <a href="https://github.com/SmallComfort" target="_blank">SmallComfort</a> as <a href="https://github.com/SmallComfort/react-vue" target="_blank">react-vue</a> and <a href="https://GeekyAnts.com" target="_blank">GeekyAnts</a> has forked it.</p>
 
-   </div>
+            <div id="mc_embed_signup">
+                <form action="https://sahusoft.us10.list-manage.com/subscribe/post?u=1255321b94080746030fac796&amp;id=bb1b4104db" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <div id="mc_embed_signup_scroll">
+
+                        <div class="mc-field-group">
+                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Enter Email">
+
+                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1255321b94080746030fac796_bb1b4104db" tabindex="-1" value=""></div>
+                            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button green"></div>
+                        </div>
+                    </div>
+                    <div id="mce-responses" class="clear">
+                        <div class="response" id="mce-error-response" style="display:none"></div>
+                        <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--End mc_embed_signup-->
+</div>
+<div class="text-center" style="padding-bottom:50px;">
+    <p>Vue Native was originally started by <a href="https://github.com/SmallComfort" target="_blank">SmallComfort</a> as <a href="https://github.com/SmallComfort/react-vue" target="_blank">react-vue</a> and <a href="https://GeekyAnts.com" target="_blank">GeekyAnts</a>        has forked it.</p>
+    <p style="margin-bottom:0"> Connect with us:</p>
+    <ul class="footer-socials flex-wrap">
+
+        <li><a target="_blank" class="twitter" href="https://twitter.com/VueNativeIO"><i class="fa fa-twitter fa-2x"></i></a></li>
+    </ul>
+
+</div>
 </div>
 
-<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+<script type='text/javascript'>
+    (function($) {
+        window.fnames = new Array();
+        window.ftypes = new Array();
+        fnames[0] = 'EMAIL';
+        ftypes[0] = 'email';
+        fnames[1] = 'FNAME';
+        ftypes[1] = 'text';
+        fnames[2] = 'LNAME';
+        ftypes[2] = 'text';
+        fnames[3] = 'ADDRESS';
+        ftypes[3] = 'address';
+        fnames[4] = 'PHONE';
+        ftypes[4] = 'phone';
+    }(jQuery));
+    var $mcj = jQuery.noConflict(true);
+</script>
