@@ -6,7 +6,7 @@ vue_version: 2.5.13
 gz_size: "30.67"
 ---
 
-This page will help you install and build your first native app using [Vue Native](http://vuenativedocs.geekydev.com).
+This page will help you install and build your first native app using [Vue Native](https://vue-native.io/).
 
 **System Requirements**
 * Globally installed [node](https://nodejs.org/en/) >= 6.0
@@ -15,7 +15,7 @@ This page will help you install and build your first native app using [Vue Nativ
 
 ## Setup with Vue Native Cli
 
-[Vue Native Cli](https://github.com/GeekyAnts/vue-native-cli) is the easiest way to start building a application using [Vue Native](http://vuenativedocs.geekydev.com).
+[Vue Native Cli](https://github.com/GeekyAnts/vue-native-cli) is the easiest way to start building a application using [Vue Native](https://vue-native.io/).
 
 Assuming that you have globally installed [create-react-native-app](https://github.com/react-community/create-react-native-app).
 
@@ -106,9 +106,9 @@ module.exports = {
 };
 ```
 
-You've successfully setup [Vue Native](http://vuenativedocs.geekydev.com) with your [React Native](https://facebook.github.io/react-native/) app. Now build truly native app which are ready to run on iOS and Android devices.
+You've successfully setup [Vue Native](https://vue-native.io/) with your [React Native](https://facebook.github.io/react-native/) app. Now build truly native app which are ready to run on iOS and Android devices.
 
-Check out the [KitchenSink Vue Native App](https://github.com/GeekyAnts/KitchenSink-Vue-Native) an example which demonstrate different usages of [Vue Native](http://vuenativedocs.geekydev.com) and [NativeBase](https://nativebase.io).
+Check out the [KitchenSink Vue Native App](https://github.com/GeekyAnts/KitchenSink-Vue-Native) an example which demonstrate different usages of [Vue Native](https://vue-native.io/) and [NativeBase](https://nativebase.io).
 
 ** Step 4 Create A Vue File **
 Remove the Content of the `App.js` file and rename `App.js` file with `App.vue`.

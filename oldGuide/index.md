@@ -20,7 +20,7 @@ React Native is an open source framework for building truly native mobile applic
 
 ** Hello World In Vue Native **
 
-The easiest way to try out [Vue Native](http://vuenativedocs.geekydev.com) is by building a Hello world app. The [Installation](installation.html) page provides setup of installing Vue Native and setup the project.
+The easiest way to try out [Vue Native](https://vue-native.io/) is by building a Hello world app. The [Installation](installation.html) page provides setup of installing Vue Native and setup the project.
 
 Create a .vue file and copy and paste the below content.
 
