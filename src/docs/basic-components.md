@@ -141,7 +141,7 @@ One of the drawbacks using Flatlist is the renderItem method should return JSX w
 <script>
     export default {
         methods: {
-            renderList: (item) => {
+            renderList: function(item) {
                 return (<Text>{item}<Text>)
             }
         }
@@ -237,7 +237,7 @@ This is a controlled component that requires an `on-value-change` callback that 
             }
         },
         methods: {
-            handleChange: () => {
+            handleChange: function() {
                 this.value = !this.value
             }
         }
@@ -263,7 +263,7 @@ A wrapper for making views respond properly to touches. On press down, the opaci
 <script>
     export default {
         methods: {
-            onPressButton: () => {
+            onPressButton: function() {
                 alert('Clicked Image')
             }
         }
