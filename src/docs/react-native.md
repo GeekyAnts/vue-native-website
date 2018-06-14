@@ -13,7 +13,7 @@ Vue Native transpiles to React Native. React Native is a framework to build nati
 What changes in Vue Native (when compared to React Native)?
 • You write .vue files instead of .js
 • Any .vue file has three parts which are `<template />, <style /> and <script />`
-• With `template` and `style` section we use hyphen-case and Pascal case in the script section. This includes the name of the component, style properties and style names
+• With `template` and `style` section we use hyphen-case and Pascal case in the `script` section. This includes the name of the component, style properties and style names
 
 Vue Native is like a syntactic sugar for React Native. We can import any React Native component as it is and start using it
 
