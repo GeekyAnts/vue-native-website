@@ -4,7 +4,7 @@ type: guide
 order: 2
 ---
 
-<iframe src="//slides.com/gauravp/vue-native/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="//slides.com/gauravp/vue-native/embed" max-width="576" width="100%" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 First of all we would like to thank SmallComfort (https://github.com/SmallComfort/react-vue) for their efforts in creating the compiler.
 ## What is Vue Native?
