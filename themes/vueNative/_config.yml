@@ -1,6 +1,6 @@
 site_description: "Vue Native - The Progressive JavaScript Framework For Mobile Apps"
 # google_analytics: UA-46852172-1
-root_domain: https://vue-native.io
+root_domain: vue-native.io
 vue_version: 0.0.5
 
 special_sponsors:

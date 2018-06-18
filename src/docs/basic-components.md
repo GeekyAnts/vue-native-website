@@ -57,7 +57,7 @@ A foundational component for inputting text into the app via a keyboard. Props p
 ```html
 <template>
     <text-input
-        :style="{height: 40, border-color: 'gray', border-width: 1}"
+        :style="{height: 40, borderColor: 'gray', borderWidth: 1}"
         v-model="text"
       />
 </template>
@@ -205,10 +205,11 @@ Component to control the app status bar.
 ```html
 <template>
     <view>
-    <status-bar
-        background-color="blue"
-        bar-style="light-content"
-    />
+        <status-bar
+            background-color="blue"
+            bar-style="light-content"
+        />
+    </view>
 </template>
 ```
 
@@ -277,7 +278,7 @@ WebView renders web content in a native view.
 ```html
 <template>
     <web-view
-        :source="{uri: 'https://github.com/facebook/react-native'}
+        :source="{uri: 'https://github.com/facebook/react-native'}"
         :style="{marginTop: 20}"
     />
 </template>

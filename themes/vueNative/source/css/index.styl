@@ -69,6 +69,49 @@ p
 .start-build
  font-size:32px;
  color:#6a6a6a;
+:focus 
+ outline: 0 
+#mc_embed_signup
+ margin-bottom:100px
+  
+
+.mc-field-group
+  display: -webkit-box     
+  display: -moz-box         
+  display: -ms-flexbox      
+  display: -webkit-flex    
+  display: flex
+  justify-content: center
+  .button
+   padding: 0.75em 2em
+   border-radius: 2em
+   display: inline-block;
+   color: #fff;
+   background-color: #4fc08d
+   transition: all 0.15s ease
+   box-sizing: border-box
+   border: 1px solid #4fc08d
+  #mce-EMAIL
+    padding: 0.75em 2em
+    border-radius: 2em;
+    display: inline-block
+    color: #fff
+    box-sizing: border-box
+    margin: 1em 0.1em
+    font-size: 1.05em
+    font-weight: 300
+    letter-spacing: 0.1em
+    min-width: 8em
+    border: 1px solid #f2f2f2
+    color:#333
+    &.mce_inline_error
+     display:block !important
+     border-color: red !important
+  .mce_inline_error
+   display:none !important
+ 
+
+   
 #hero
   background-color: #fff
   max-width: 884px
@@ -196,7 +239,7 @@ p
     justify-content: space-around;
     margin-bottom: 50px;
   img
-    height:600px
+    height:auto
     width:100%
   .app-name
     background: #42b983
@@ -206,7 +249,23 @@ p
     text-align: center
     color: #fff
   
-
+.footer-socials
+ padding:0
+ margin:0
+ li
+  list-style:none
+  a
+   display: block
+   width: 40px
+   height: 40px
+   border-radius: 40px
+   display: flex
+   align-items: center
+   justify-content: center
+   transition: all 0.15s ease;
+   &:hover
+    background: $green
+    color:#fff
 
 
 @media screen and (max-width: $width)
@@ -240,6 +299,8 @@ p
       display: block
     .button
       font-size: .9em
+    .mc-field-group #mce-EMAIL
+     font-size: .9em
   #special-sponsor
     span
       display: block
