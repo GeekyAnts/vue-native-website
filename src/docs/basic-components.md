@@ -57,7 +57,7 @@ A foundational component for inputting text into the app via a keyboard. Props p
 ```html
 <template>
     <text-input
-        :style="{height: 40, border-color: 'gray', border-width: 1}"
+        :style="{height: 40, borderColor: 'gray', borderWidth: 1}"
         v-model="text"
       />
 </template>
