@@ -145,7 +145,7 @@ One of the drawbacks using Flatlist is the renderItem method should return JSX w
     export default {
         methods: {
             renderList: (item) => {
-                return (<Text>{item.key}<Text>)
+                return (<Text>{item.key}</Text>)
             }
         }
     }
