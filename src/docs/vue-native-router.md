@@ -20,6 +20,9 @@ Here's the sample app where we have used the plugin [KitchenSink](https://github
 ```js
 <script>
 import { StackNavigator } from "vue-native-router";
+import HomeScreen from "./Home";
+import DetailsScreen from "./Details";
+
 const AppNavigation = StackNavigator(
   {
     Home: HomeScreen,
