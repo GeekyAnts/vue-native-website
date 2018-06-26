@@ -15,7 +15,7 @@ Animations are a useful tool to boost the user experience and hence it must be u
 
 Let's take a look at how we can achieve the former approach in this section with the help of a simple grow animation.
 
-### The Grow Effect
+## The Grow Effect
 
 First, import the required components and set up the `template` section.
 
