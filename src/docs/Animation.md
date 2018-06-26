@@ -9,9 +9,10 @@ Animations are very important to create a great user experience. Animations allo
 
 ## Introduction
 
-Animations are a useful tool to boost the user experience and hence it must be utilised to the fullest, meaning there are mainly two ways you can animated components.
+Animations are a useful tool to boost the user experience and hence it must be utilised to the fullest, meaning there are mainly two ways you can animate components:
+
 • To build from ground up, one can use an animation library such as React Native's Animated API and animate components such as `view` or `text`.
-• Use animations from animation tools like `AirBnb`'s `Lottie`.
+• Import animations from animation tools like After Effects (using Lottie).
 
 Let's take a look at how we can achieve the former approach in this section with the help of a simple grow animation.
 
@@ -22,7 +23,7 @@ First, import the required components and set up the `template` section.
 ```html
 <template>
   <view class="container" >
-      <Animated:view
+      <animated:view
      class="growth-animated-view"
         :style="{
           height: growth,
@@ -58,17 +59,20 @@ All the variable style properties are inline and the others can be provided usin
 
 The first step when starting an animation is to know our start and end frames and how the values of the components need to change in order to move from the start frame to the end.
 
-Start frame
+<div style="display: flex;" class="flex-column exam-app">
+            <div class="card" style="margin-right:30px;">
+                <h4><a target="_blank" >Start frame</a></h4>
+                <p> </p>
+                <img src="./../images/grow-animation-start.png" />
+            </div>
+            <div class="card">
+                <h4> <a target="_blank" >End frame</a></h4>
+                <p> </p>
+                <img src="./../images/grow-animation-end-frame.png" />
+            </div>
+</div>
 
 In this case, since we are creating a simple "grow" effect on a circular element, our start frame will be an `animated:view` with all the three properties having the value zero. Basically, our start frame will be a blank screen since the `growth` value is set to zero when the component is `created`.
-
-End Frame
-
-<div class="hello-world-container">
-  <div class="hello-world-wrapper">
-    <img src="./../images/grow-animation-end-frame.png" class="img-wrapper" />
-  </div>
-</div>
 
 The end frame is a view that has the background color blue and height, width, border radius as 200.
 
@@ -90,12 +94,11 @@ export default {
     this.growth = new Animated.Value(0);
   },
   mounted: function() {
-    this.animategrowth();
+    this.animateGrowth();
   },
   methods: {
-    animategrowth: function() {
+    animateGrowth: function() {
 
-      console.log(this.growth);
       this.growth.setValue(0);
 
       Animated.timing(this.growth, {
@@ -103,7 +106,7 @@ export default {
         duration: 1000,
         easing: Easing.linear
       }).start(() => {
-        // this.animategrowth();
+        // this.animateGrowth();
       });
     }
   }
@@ -146,10 +149,10 @@ export default {
     this.animatedValueRotate = new animated.Value(0);
   },
   mounted: function() {
-    this.animategrowth();
+    this.animateGrowth();
   },
   methods: {
-    animategrowth: function() {
+    animateGrowth: function() {
       this.growthValue.setValue(0);
       Animated
         .timing(this.growthValue, {
@@ -158,7 +161,7 @@ export default {
           easing: Easing.linear
         })
         .start(() => {
-          // this.animategrowth();
+          // this.animateGrowth();
         });
       this.growth = this.growthValue.interpolate({
         inputRange: [0, 0.5, 1],
