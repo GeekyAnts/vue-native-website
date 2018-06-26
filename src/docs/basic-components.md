@@ -5,10 +5,12 @@ order: 5
 ---
 
 ### View
+
 The most fundamental component for building a UI, View is a container that supports layout
 `View` is designed to be nested inside other views and can have 0 to many children of any type.
 
 ### Text
+
 A Vue Native component for displaying text.
 
 Text supports nesting, styling, and touch handling.
@@ -31,6 +33,7 @@ Text supports nesting, styling, and touch handling.
 ```
 
 ### Image
+
 A Vue Native component for displaying different types of images, including network images, static resources, temporary local images, and images from local disk, such as the camera roll.
 
 ```html
@@ -52,6 +55,7 @@ A Vue Native component for displaying different types of images, including netwo
 ```
 
 ### TextInput
+
 A foundational component for inputting text into the app via a keyboard. Props provide configurability for several features, such as auto-correction, auto-capitalization, placeholder text, and different keyboard types, such as a numeric keypad.
 
 ```html
@@ -62,6 +66,7 @@ A foundational component for inputting text into the app via a keyboard. Props p
       />
 </template>
 ```
+
 ```js
 <script>
     export default {
@@ -73,6 +78,7 @@ A foundational component for inputting text into the app via a keyboard. Props p
 ```
 
 ### ScrollView
+
 Component that wraps platform ScrollView while providing integration with touch locking "responder" system.
 
 Keep in mind that ScrollViews must have a bounded height in order to work, since they contain unbounded-height children into a bounded container (via a scroll interaction)
@@ -90,6 +96,7 @@ ScrollView simply renders all its react child components at once. That makes it 
 ```
 
 ### Button
+
 A basic button component that should render nicely on any platform. Supports a minimal level of customization.
 
 ```html
@@ -102,6 +109,7 @@ A basic button component that should render nicely on any platform. Supports a m
     />
 </template>
 ```
+
 ```js
 <script>
 export default {
@@ -115,6 +123,7 @@ export default {
 ```
 
 ### FlatList
+
 A performant interface for rendering simple, flat lists, supporting the most handy features:
 
 . Fully cross-platform.
@@ -137,6 +146,7 @@ One of the drawbacks using Flatlist is the renderItem method should return JSX w
     />
 </template>
 ```
+
 ```js
 <script>
     export default {
@@ -177,6 +187,7 @@ Optionally provide a list of buttons. Tapping any button will fire the respectiv
     />
 </template>
 ```
+
 ```js
 <script>
 import { Alert } from 'react-native';
@@ -228,6 +239,7 @@ This is a controlled component that requires an `on-value-change` callback that 
     </view>
 </template>
 ```
+
 ```js
 <script>
     export default {
@@ -237,7 +249,7 @@ This is a controlled component that requires an `on-value-change` callback that 
             }
         },
         methods: {
-            handleChange: () => {
+            handleChange: function() {
                 this.value = !this.value
             }
         }
@@ -259,6 +271,7 @@ A wrapper for making views respond properly to touches. On press down, the opaci
     </touchable-opacity>
 </template>
 ```
+
 ```js
 <script>
     export default {
@@ -287,4 +300,3 @@ WebView renders web content in a native view.
 ### Further Details
 
 For further details about different components and API's in depth, you can refer to https://facebook.github.io/react-native/
-
