@@ -59,13 +59,21 @@ The first step when starting an animation is to know our start and end frames an
             <div class="card" style="margin-right:30px;">
                 <h4><a target="_blank" >Start frame</a></h4>
                 <p> </p>
-                <img src="./../images/grow-animation-start.png" />
+                <div class="hello-world-container">
+  <div class="hello-world-wrapper">
+    <img src="./../images/grow-animation-start.png" class="img-wrapper" />
+  </div>
+</div>
             </div>
             <div class="card">
                 <h4> <a target="_blank" >End frame</a></h4>
                 <p> </p>
-                <img src="./../images/grow-animation-end-frame.png" />
-            </div>
+                 <div class="hello-world-container">
+  <div class="hello-world-wrapper">
+    <img src="./../images/grow-animation-end-frame.png" class="img-wrapper" />
+  </div>
+</div>
+</div>
 </div>
 
 In this case, since we are creating a simple "grow" effect on a circular element, our start frame will be an `animated:view` with all the three properties having the value zero. Basically, our start frame will be a blank screen since the `growth` value is set to zero when the component is `created`.
