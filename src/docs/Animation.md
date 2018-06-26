@@ -18,7 +18,7 @@ Let's take a look at how we can achieve the former approach in this section with
 
 ## The Grow Effect
 
-First, import the required components and set up the `template` section.
+First, set up the `template` section.
 
 ```html
 <template>
@@ -33,10 +33,6 @@ First, import the required components and set up the `template` section.
           />
 </view>
 </template>
-```
-
-```js
-<script>import {(Animated, Easing)} from "react-native";</script>
 ```
 
 The template section comprises of an "animated" view and another view wrapped around it. The `animated:view` has inline variable style properties for `height`,`width`, and `borderRadius`. All of these are provided with an animated value `growth` which is intialised when the component is `created`.
