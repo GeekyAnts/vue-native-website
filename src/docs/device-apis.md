@@ -1,5 +1,5 @@
 ---
-title: Guide to use device APIs
+title: Device APIs
 type: guide
 order: 18
 vue_version: 2.5.13
