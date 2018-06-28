@@ -1,7 +1,7 @@
 ---
 title: Lottie
 type: guide
-order: 16
+order: 18
 vue_version: 2.5.13
 gz_size: "30.67"
 ---

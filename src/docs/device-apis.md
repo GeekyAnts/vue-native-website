@@ -1,7 +1,7 @@
 ---
 title: Device APIs
 type: guide
-order: 18
+order: 11
 vue_version: 2.5.13
 ---
 
@@ -9,7 +9,7 @@ Some of the functionalities that an app needs that depends on the hardware of th
 
 ## Accelerometer
 
-Vue-native (CRNA) projects, need to import the `sensors` from `expo`.
+Vue-native projects, need to import the `sensors` from `expo`.
 
 ```shell
 npm i expo

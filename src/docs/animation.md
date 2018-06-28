@@ -5,7 +5,7 @@ order: 9
 vue_version: 2.5.13
 ---
 
-Animations are very important to create a great user experience. Animations allow you to convey physically believable motion in your interface. The Animated API is designed to make it very easy to concisely express a wide variety of interesting animation and interaction patterns in a very performant way. Here Are Few Examples.
+Animations are very important to create a great user experience. Animations allow you to convey physically believable motion in your interface. The Animated API is designed to make it very easy to concisely express a wide variety of interesting animation and interaction patterns in a very performant way. Here are few examples.
 
 ## Introduction
 
@@ -23,15 +23,15 @@ First, set up the `template` section.
 ```html
 <template>
   <view class="container" >
-      <animated:view
+    <animated:view
      class="growth-animated-view"
         :style="{
           height: growth,
           width: growth ,
           borderRadius:growth,
           }"
-          />
-</view>
+    />
+  </view>
 </template>
 ```
 
@@ -56,19 +56,17 @@ All the variable style properties are inline and the others can be provided usin
 The first step when starting an animation is to know our start and end frames and how the values of the components need to change in order to move from the start frame to the end.
 
 <div style="display: flex;" class="flex-column exam-app">
-            <div class="card" style="margin-right:30px;">
-                <h4><a target="_blank" >Start frame</a></h4>
-                <p> </p>
-                <div class="hello-world-container">
+<div class="card">
+  <h4 style="text-align:center">Start frame</h4>
+<div class="hello-world-container">
   <div class="hello-world-wrapper">
     <img src="./../images/grow-animation-start.png" class="img-wrapper" />
   </div>
 </div>
-            </div>
-            <div class="card">
-                <h4> <a target="_blank" >End frame</a></h4>
-                <p> </p>
-                 <div class="hello-world-container">
+</div>
+<div class="card">
+    <h4 style="text-align:center"> End frame</h4>
+      <div class="hello-world-container">
   <div class="hello-world-wrapper">
     <img src="./../images/grow-animation-end-frame.png" class="img-wrapper" />
   </div>
@@ -131,7 +129,7 @@ This is the result of the above code snippet :
 
 <div class="hello-world-container">
   <div class="hello-world-wrapper">
-    <img src="./../images/grow-animation-single-grow.gif" class="img-wrapper" />
+    <img src="./../images/growAnimation-once.gif" class="img-wrapper" />
   </div>
 </div>
 
@@ -181,7 +179,7 @@ export default {
 
 <div class="hello-world-container">
   <div class="hello-world-wrapper">
-    <img src="./../images/grow-animation-grow-shrink.gif" class="img-wrapper" />
+    <img src="./../images/growAnimation-single-bounce.gif" class="img-wrapper" />
   </div>
 </div>
 

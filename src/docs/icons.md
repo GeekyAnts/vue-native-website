@@ -1,11 +1,11 @@
 ---
 title: Icons
 type: guide
-order: 17
+order: 10
 vue_version: 2.5.13
 ---
 
-To use Icons in Vue Native, you could simply do it the same way you do in any CRNA project.
+Usage of icons in Vue Native.
 
 • Import and use the already available icons from the `@expo/vector-icons` or any desired package.
 • Use PNGs as icons to get your own customized icons running.
@@ -64,25 +64,9 @@ If you know how to use the react-native `<Image>` component this will be a breez
 <template>
   <view class="container">
     <image
-        :source="image"
+        :source="require('./logo.png')"
         :style="{width: 100, height: 100}"
       />
   </view>
 </template>
-```
-
-The image relative path used in source must be imported and put under data.
-
-```
-import image from "./logo.png";
-...
-...
-...
-export default {
-data: function() {
-    return {
-      image
-    };
-  },
-}
 ```
