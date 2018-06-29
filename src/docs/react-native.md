@@ -1,14 +1,14 @@
 ---
 title: React Native
 type: guide
-order: 9
+order: 10
 vue_version: 2.5.13
 gz_size: "30.67"
 ---
 
 Vue Native transpiles to React Native. React Native is a framework to build native Android and iOS apps using JavaScript.
 
-*So, you can one-to-one map Vue Native components to React Native components.*
+_So, you can one-to-one map Vue Native components to React Native components._
 
 What changes in Vue Native (when compared to React Native)?
 • You write .vue files instead of .js

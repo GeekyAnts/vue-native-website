@@ -1,7 +1,7 @@
 ---
 title: Vue Native Router
 type: guide
-order: 11
+order: 12
 vue_version: 2.5.13
 gz_size: "30.67"
 ---
@@ -17,6 +17,7 @@ Here's the sample app where we have used the plugin [KitchenSink](https://github
   <app-navigation></app-navigation>
 </template>
 ```
+
 ```js
 <script>
 import { StackNavigator } from "vue-native-router";
@@ -36,8 +37,10 @@ export default {
 ```
 
 ## Moving in between screens
+
 Since the navigation is available as prop within the child components. We can use something like `this.navigation.navigate("Home");` to switch from one screen to another.
 You can also pass data to routes when we navigate. The syntax is `this.navigation.navigate("RouteName", {/* params go here */ });`
+
 ```js
 <script>
 export default {
@@ -56,11 +59,14 @@ export default {
 ```
 
 ### Going back
+
 It is possible to go back from the active screen if there is any. We can trigger it using `this.navigation.goBack()`.
 
 ## Drawer Navigation
+
 For Drawer support, you just need to add screen `Drawer` in StackNavigator options.
 You can initialize the drawer using DrawerNavigator API and create a sidebar component to render the sidebar view.
+
 ```
 const Drawer = DrawerNavigator(
     {
@@ -86,8 +92,10 @@ const RootStack = StackNavigator(
 ```
 
 ## Tab Navigation
+
 Possibly the most common style of navigation in mobile apps is tab-based navigation.
 You can use `createBottomTabNavigator` API to implement tab based routing.
+
 ```
 export default createBottomTabNavigator({
   Home: HomeScreen
@@ -95,4 +103,5 @@ export default createBottomTabNavigator({
 ```
 
 ## Further Information
+
 Since the app is based on React Navigation. You can use all the API's specified in react navigation docs. https://reactnavigation.org/docs/en/api-reference.html
