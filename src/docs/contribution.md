@@ -26,13 +26,9 @@ Before submitting a pull request, please make sure the following is done:
 3.  Create a sample app using vue-native-cli separately outside the project repository.
 4.  Within the project repository, go to packages folder `vue-native-core/packages`
 5.  There are multiple modules which you can modify
-    - react-vue-helper
-    - react-vue-template-compiler
-    - react-vue
-    - vue-server-renderer
-    - vue-template-compiler
-    - weex-template-compiler
-    - weex-vue-framework
+    - vue-native-helper
+    - vue-native-template-compiler
+    - vue-native-core
 6.  If you want modify the mobile app compiler. Then you would've to use vue-template-compiler or vue-native-helper based on your requirements. Update the build.js file accordingly.
 7.  run `npm link <the-package-you-want-to-modify>`
 8.  Format your code with prettier
