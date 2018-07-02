@@ -82,12 +82,12 @@ var upstreamTransformer = require("metro/src/transformer");
 // For React Native version 0.46
 // var upstreamTransformer = require("metro-bundler/build/transformer");
 
-var vueNaiveScripts = require("vue-native-scripts");
+var vueNativeScripts = require("vue-native-scripts");
 var vueExtensions = ["vue"];
 
 module.exports.transform = function({ src, filename, options }) {
   if (vueExtensions.some(ext => filename.endsWith("." + ext))) {
-    return vueNaiveScripts.transform({ src, filename, options });
+    return vueNativeScripts.transform({ src, filename, options });
   }
   return upstreamTransformer.transform({ src, filename, options });
 };
