@@ -1,20 +1,21 @@
 ---
 title: Handling user input
 type: guide
-order: 8
+order: 9
 vue_version: 2.5.13
 gz_size: "30.67"
 ---
 
 To let users interact with your app, we can use the `v-bind` directive to attach event listeners that invoke methods on our Vue Native instances:
 
-``` html
+```html
 <view class="container">
   <button v-bind:onPress="handleBtnClickCount" :title="btnTitle" />
   <text class="text-container">{{btnClickCount}}</text>
 </view>
 ```
-``` js
+
+```js
 <script>
 export default {
   data: function() {
@@ -58,7 +59,7 @@ Note that in this method we update the state of our app when ever the user click
 
 Vue Native also provides the `v-model` directive that makes two-way binding between form input and app state a breeze:
 
-``` html
+```html
 <view class="container">
     <text-input
       class="text-input-container"
@@ -68,7 +69,8 @@ Vue Native also provides the `v-model` directive that makes two-way binding betw
     <text class="text-container">{{textContent}}</text>
 </view>
 ```
-``` js
+
+```js
 <script>
 export default {
   data: function() {
@@ -79,6 +81,7 @@ export default {
 };
 </script>
 ```
+
 ```css
 <style>
 .container {
