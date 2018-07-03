@@ -1,7 +1,7 @@
 ---
 title: Device APIs
 type: guide
-order: 11
+order: 10
 vue_version: 2.5.13
 gz_size: "30.67"
 ---
@@ -35,9 +35,9 @@ data: function() {
 ```html
 <template>
   <view class="container">
-      <text>Accelerometer:</text>
-        <text>{{accelerometerData.x}}</text>
-        </view>
+    <text>Accelerometer:</text>
+    <text>{{accelerometerData.x}}</text>
+  </view>
 </template>
 ```
 
@@ -66,12 +66,12 @@ You must request permission to access the user's location before attempting to g
 ```html
 <template>
   <view class="container">
-        <text>Location:</text>
-        <text>{{location.latitude}}</text>
-        <touchable-opacity :onPress="getLocationAsync" >
-            <text>get location</text>
-          </touchable-opacity>
-      </view>
+    <text>Location:</text>
+    <text>{{location.latitude}}</text>
+    <touchable-opacity :on-press="getLocationAsync" >
+        <text>get location</text>
+    </touchable-opacity>
+  </view>
 </template>
 
  <script>
@@ -127,10 +127,8 @@ Requires `Permissions.CAMERA`. Video recording requires `Permissions.AUDIO_RECOR
 ```html
 <template>
   <view class="container">
-          <camera class="container" :type="this.type" v-if="loaded">
-          </camera>
-    </view>
-
+    <camera class="container" :type="this.type"/>
+  </view>
 </template>
 ```
 
@@ -143,22 +141,13 @@ export default {
    return {
      hasCameraPermission: false,
      type: Camera.Constants.Type.back,
-     loaded: false
    };
  },
  created: function() {},
  mounted: function() {
    Permissions.askAsync(Permissions.CAMERA)
      .then(status => {
-       setTimeout(() => {
-         this.loaded = true;
-       }, 1000);
-       console.log(status.status);
        hasCameraPermission = status.status == "granted" ? true : false;
-       console.log(hasCameraPermission);
-     })
-     .catch(err => {
-       print(err);
      });
  },
  components: { Camera },

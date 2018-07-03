@@ -1,7 +1,7 @@
 ---
 title: Community Libraries
 type: guide
-order: 7
+order: 14
 vue_version: 2.5.13
 gz_size: "30.67"
 ---
@@ -95,7 +95,7 @@ For Vue-Native projects created with Crna, mapView from `expo` can be diretly us
 <template>
   <view  class="container">
     <map-view class="container"
-        :initialRegion="coordinates"
+        :initial-region="coordinates"
       />
   </view>
 </template>
@@ -141,7 +141,7 @@ export default {
       :source="animation ? animation  : {}"
     />
     <view class="button-container">
-        <button title="Start Animation" :onPress="playAnimation" />
+        <button title="Start Animation" :on-press="playAnimation" />
     </view>
 </view>
 ```
