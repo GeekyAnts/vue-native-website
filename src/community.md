@@ -386,8 +386,8 @@ Requires `Permissions.CAMERA`. Video recording requires `Permissions.AUDIO_RECOR
 
 ```html
 <template>
-  <view :style="{flex:1}">
-          <camera :style="{flex:1}" :type="this.type" v-if="loaded">
+  <view class="container">
+          <camera class="container" :type="this.type" v-if="loaded">
           </camera>
     </view>
 
@@ -430,9 +430,6 @@ export default {
 ```css
 <style>
 .container {
-  background-color: white;
-  align-items: center;
-  justify-content: center;
   flex: 1;
 }
 .text-color-primary {
