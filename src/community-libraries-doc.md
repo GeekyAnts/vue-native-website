@@ -10,5 +10,5 @@ There are several contributions from the community that can be used in Vue-nativ
 
 • [Icons](http://staging-vue-native.geekydev.com/docs/community-libraries/icons.html)
 • [Maps](http://staging-vue-native.geekydev.com/docs/community-libraries/maps.html)
-• [Lottie](http://staging-vue-native.geekydev.com/docs/community-libraries/lottie/html)
+• [Lottie](http://staging-vue-native.geekydev.com/docs/community-libraries/lottie.html)
 • [Native base](https://docs.nativebase.io/docs/GetStarted.html)
