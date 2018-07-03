@@ -1,5 +1,5 @@
 ---
-title: Community Support
+title: Community Libraries
 type: guide
 order: 7
 vue_version: 2.5.13
@@ -10,7 +10,7 @@ gz_size: "30.67"
 
 Usage of icons in Vue Native.
 
-• Import and use the already available icons from the `@expo/vector-icons` for CRNA projects or `react-native-vector-icons` for no-crna projects(remember to link).
+• Import and use the already available icons from the `@expo/vector-icons` for CRNA projects or `react-native-vector-icons` for non-crna projects (remember to link).
 • Use PNGs as icons to get your own customized icons running.
 
 We will be showing both these methods here.
@@ -35,14 +35,14 @@ Also add the `Ionicons` imported in the `components` block.
 <script>
 import { Ionicons } from "@expo/vector-icons";
 export default {
-  components:{Ionicons},
+  components: {Ionicons},
 }
 </script>
 ```
 
 If you want to use the imported `Ionicons` globally, you will have to import the `Vue` component from the `vue-native-core` library which is already there if you created your project using the `vue-native-cli`.
 
-Use the `Vue.component` function to specify the component that will be used globally.
+Use the `Vue.component` function in your root file `App.vue` to specify the component that will be used globally.
 
 ```js
 import Vue from "vue-native-core";
@@ -68,10 +68,19 @@ If you know how to use the React Native `<Image>` component this will be a breez
   <view class="container">
     <image
         :source="require('./logo.png')"
-        :style="{width: 100, height: 100}"
+        class="imagestyle"
       />
   </view>
 </template>
+```
+
+```css
+<script>
+.imagestyle{
+  width: 100;
+  height: 100;
+}
+</script>
 ```
 
 ## Maps
@@ -86,12 +95,7 @@ For Vue-Native projects created with Crna, mapView from `expo` can be diretly us
 <template>
   <view  class="container">
     <map-view class="container"
-        :initialRegion="{
-          latitude: coordinates.latitude,
-          longitude: coordinates.longitude,
-          latitudeDelta: coordinates.latitudeDelta,
-          longitudeDelta:coordinates.longitudeDelta,
-        }"
+        :initialRegion="coordinates"
       />
   </view>
 </template>
