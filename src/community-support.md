@@ -1,5 +1,5 @@
 ---
-title: Community
+title: Community Support
 type: guide
 order: 6
 vue_version: 2.5.13
