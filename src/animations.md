@@ -200,18 +200,30 @@ The animation properties in our `animatedView` component is `marginLeft` and `ro
 
 ```html
 <template>
-  <view :style="{justifyContent:'center',flex:1}">
+  <view class="conatiner">
      <animatedView
+     class="animatedviewstyle"
         :style="{
           marginLeft: movingMargin,
-          height: 100,
-          width: 100 ,
-          backgroundColor: 'purple',
           transform: [{rotate: spin}],
           }"
           />
 </view>
 </template>
+```
+
+```css
+<style>
+.animatedviewstyle{
+    height: 100;
+    width: 100 ;
+    background-color: 'purple';
+}
+.container{
+    justify-content: 'center';
+    flex:1;
+}
+</style>
 ```
 
 Our `data` and `created` functions :
@@ -333,19 +345,31 @@ The animated properties are :
 
 ```html
 <template>
-  <view :style="{padding:40}">
+  <view class="container">
      <animatedView
+     class="animatedviewstyle"
         :style="{
           marginLeft: marginLeft,
           marginTop: marginTop,
-          height: 100,
-          width: 100,
+
           backgroundColor: interpolateColor,
           transform: [{rotateY},{rotateX}]
           }"
           />
 </view>
 </template>
+```
+
+```css
+<style>
+.animatedviewstyle{
+    height: 100;
+    width: 100;
+}
+.container{
+    padding:40;
+}
+</style>
 ```
 
 Let's first build the first half of the animation and then the other half is just reversing the same.
@@ -443,53 +467,65 @@ Since all four animations need to happen with some sort of delay and because we 
 
 ```html
 <template>
-  <view class="container" :style="{flexDirection:'column',justifyContent:'center',}">
+  <view class="parentcontainer" >
          <!-- <animated-rotate></animated-rotate> -->
      <!-- <animated-flip></animated-flip> -->
 
-    <view :style="{flexDirection:'row',justifyContent:'space-evenly',alignItems:'flex-end',height:300}">
+    <view class="container">
      <animatedView
+     class="animatedviewstyle"
         :style="{
           marginBottom: movingMargin,
-          height: 50,
-          width: 50,
-          borderRadius:50,
           backgroundColor: 'red',
           }"
           />
           <animatedView
+          class="animatedviewstyle"
         :style="{
           marginBottom: movingMargin1,
-          height: 50,
-          width: 50,
-          borderRadius:50,
+
           backgroundColor: 'green',
           }"
           />
           <animatedView
+          class="animatedviewstyle"
         :style="{
           marginBottom: movingMargin2,
-          height: 50,
-          width: 50,
-          borderRadius:50,
           backgroundColor: 'blue',
 
           }"
           />
           <animatedView
-        :style="{
-          marginBottom: movingMargin3,
-          height: 50,
-          width: 50,
-          borderRadius:50,
-          backgroundColor: 'purple',
-
-          }"
+            class="animatedviewstyle"
+            :style="{
+            marginBottom: movingMargin3,
+            backgroundColor: 'purple',
+            }"
           />
           </view>
           <!-- </view>  -->
     </view>
 </template>
+```
+
+```css
+<style>
+.animatedviewstyle{
+    height: 50;
+    width: 50;
+    border-radius:50;
+}
+.container{
+    flex-direction:'row';
+    justify-content:'space-evenly';
+    align-items:'flex-end';
+    height:300;
+}
+.parentcontainer{
+    flex-direction:'column';
+    justify-content:'center';
+}
+</style>
 ```
 
 Jumping into our animation function ,
@@ -571,15 +607,23 @@ The below snippet shows just one component using these animated properties :
 
 ```html
 <animatedView
+class = "animatedviewstyle"
         :style="{
           marginLeft: movingMargin,
           left: springValue,
-          height: 50,
-          width: 50,
-          borderRadius:50,
           backgroundColor: 'purple',
           }"
 />
+```
+
+```css
+<style>
+.animatedviewstyle{
+    height: 50;
+    width: 50;
+    border-radius:50;
+}
+</style>
 ```
 
 The animation function is here similar to the previous one. But in this, we have combined each of the stagger animations with a spring animation within a sequence.
