@@ -7,7 +7,7 @@ vue_version: 2.5.13
 
 Usage of icons in Vue Native.
 
-• Import and use the already available icons from the `@expo/vector-icons` or any desired package.
+• Import and use the already available icons from the `@expo/vector-icons` for CRNA projects or `react-native-vector-icons` for no-crna projects(remember to link).
 • Use PNGs as icons to get your own customized icons running.
 
 We will be showing both these methods here.
@@ -58,7 +58,7 @@ Now you are ready to use the kebab-case equivalent of the import in your `templa
 
 ## Icon images
 
-If you know how to use the react-native `<Image>` component this will be a breeze.
+If you know how to use the React Native `<Image>` component this will be a breeze.
 
 ```html
 <template>
