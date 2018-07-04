@@ -331,27 +331,9 @@
         currentPageAnchor.parentNode.appendChild(sectionContainer);
       }
       var headers = content.querySelectorAll("h2");
-      console.log(3);
-
       if (headers.length) {
-        console.log(2);
-
         each.call(headers, function(h) {
-          console.log(h.id.toLowerCase());
-
-          if (
-            h.id.toLowerCase() == "icons" ||
-            h.id.toLowerCase() == "maps" ||
-            h.id.toLowerCase() == "lottie" ||
-            h.id.toLowerCase() == "Native base"
-          ) {
-            console.log("asd");
-            sectionContainer.appendChild(makeLink1(h));
-          } else {
-            console.log("oooooooo");
-            sectionContainer.appendChild(makeLink(h));
-          }
-          // sectionContainer.appendChild(makeLink(h));
+          sectionContainer.appendChild(makeLink(h));
           var h3s = collectH3s(h);
           allHeaders.push(h);
           allHeaders.push.apply(allHeaders, h3s);
@@ -360,23 +342,10 @@
           }
         });
       } else {
-        console.log(4);
-
         headers = content.querySelectorAll("h3");
         each.call(headers, function(h) {
-          console.log(h.id);
-          if (
-            h.id == "icon" ||
-            h.id == "maps" ||
-            h.id == "lottie" ||
-            h.id == "Native base"
-          ) {
-            console.log("asd");
-            sectionContainer.appendChild(makeLink1(h));
-          } else {
-            console.log("oooooooo");
-            sectionContainer.appendChild(makeLink(h));
-          }
+          console.log(h);
+          sectionContainer.appendChild(makeLink(h));
           allHeaders.push(h);
         });
       }
@@ -468,31 +437,6 @@
         '<a class="section-link" data-scroll href="#' +
         h.id +
         '">' +
-        htmlEscape(text) +
-        "</a>";
-      return link;
-    }
-    function makeLink1(h) {
-      console.log(1);
-      var link = document.createElement("li");
-      window.arst = h;
-      var text = [].slice
-        .call(h.childNodes)
-        .map(function(node) {
-          if (node.nodeType === Node.TEXT_NODE) {
-            return node.nodeValue;
-          } else if (["CODE", "SPAN"].indexOf(node.tagName) !== -1) {
-            return node.textContent;
-          } else {
-            return "";
-          }
-        })
-        .join("")
-        .replace(/\(.*\)$/, "");
-      link.innerHTML =
-        '<a class="section-link" data-scroll href="/docs/community-libraries/' +
-        h.id.toLowerCase() +
-        '.html">' +
         htmlEscape(text) +
         "</a>";
       return link;
