@@ -1,9 +1,9 @@
 ---
 title: Icons
-# type: guide
-# order: 15
+type: community-libraries
+order: 1
 vue_version: 2.5.13
-gz_size: "30.67"
+# gz_size: "30.67"
 ---
 
 Usage of icons in Vue Native.

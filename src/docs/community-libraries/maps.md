@@ -2,6 +2,8 @@
 title: Maps
 # type: guide
 # order: 16
+type: community-libraries
+order: 2
 vue_version: 2.5.13
 gz_size: "30.67"
 ---

@@ -2,6 +2,8 @@
 title: Lottie
 # type: guide
 # order: 17
+type: community-libraries
+order: 3
 vue_version: 2.5.13
 gz_size: "30.67"
 ---
