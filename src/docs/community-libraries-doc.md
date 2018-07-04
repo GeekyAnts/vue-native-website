@@ -6,7 +6,7 @@ vue_version: 2.5.13
 gz_size: "30.67"
 ---
 
-<!-- There are several contributions from the community that can be used in Vue-native and some of them are listed below : -->
+There are several contributions from the community that can be used in Vue-native and some of them are listed below :
 
 ## Icons
 

@@ -25,12 +25,12 @@ First, set up the `template` section.
 <template>
   <view class="container" >
     <animated:view
-     class="growth-animated-view"
-        :style="{
-          height: growth,
-          width: growth ,
-          borderRadius:growth,
-          }"
+      class="growth-animated-view"
+      :style="{
+        height: growth,
+        width: growth ,
+        borderRadius:growth,
+      }"
     />
   </view>
 </template>
@@ -192,8 +192,6 @@ Now to repeat the same animation, add a recursive call inside the `start` functi
   </div>
 </div>
 
-Refer the [community support](http://staging-vue-native.geekydev.com/docs/community-support.html) section for more details on how to use animation tools in Vue-native.
-
 ## Spin and Glide Animation
 
 The animation properties in our `animatedView` component is `marginLeft` and `rotate` property of `tranform`.
@@ -202,19 +200,19 @@ The animation properties in our `animatedView` component is `marginLeft` and `ro
 <template>
   <view class="conatiner">
      <animatedView
-     class="animatedviewstyle"
+        class="animated-view-style"
         :style="{
           marginLeft: movingMargin,
           transform: [{rotate: spin}],
-          }"
-          />
-</view>
+        }"
+      />
+  </view>
 </template>
 ```
 
 ```css
 <style>
-.animatedviewstyle{
+.animated-view-style{
     height: 100;
     width: 100 ;
     background-color: 'purple';
@@ -250,7 +248,7 @@ Let's take a look at the start and end frames of our animation.
   <h4 style="text-align:center">Start frame</h4>
 <div class="hello-world-container">
   <div class="hello-world-wrapper">
-    <img src="./images/animation-rotate-start-frame.png" class="img-wrapper" />
+    <img src="./../images/animation-rotate-start-frame.png" class="img-wrapper" />
   </div>
 </div>
 </div>
@@ -258,7 +256,7 @@ Let's take a look at the start and end frames of our animation.
     <h4 style="text-align:center"> End frame</h4>
       <div class="hello-world-container">
   <div class="hello-world-wrapper">
-    <img src="./images/animation-rotate-end-frame.png" class="img-wrapper" />
+    <img src="./../images/animation-rotate-end-frame.png" class="img-wrapper" />
   </div>
 </div>
 </div>
@@ -268,52 +266,52 @@ The `animateRotate` function makes use of the the `animated.sequence` and `anima
 
 ```js
 animationRotate: function() {
-      this.spinValue.setValue(0);
-      this.animatedValueRotate.setValue(0);
+  this.spinValue.setValue(0);
+  this.animatedValueRotate.setValue(0);
 
-      animated
-        .sequence([
-          animated.parallel([
-            animated.timing(this.spinValue, {
-              toValue: 1,
-              duration: 2000,
-              easing: Easing.linear
-            }),
-            animated.timing(this.animatedValueRotate, {
-              toValue: 1,
-              duration: 2000,
-              easing: Easing.linear
-            })
-          ]),
-          animated.parallel([
-            animated.timing(this.spinValue, {
-              toValue: 0,
-              duration: 2000,
-              easing: Easing.linear
-            }),
-            animated.timing(this.animatedValueRotate, {
-              toValue: 0,
-              duration: 2000,
-              easing: Easing.linear
-            })
-          ])
-        ])
-        .start(() => {
-          this.animationRotate();
-        });
+  animated
+    .sequence([
+      animated.parallel([
+        animated.timing(this.spinValue, {
+          toValue: 1,
+          duration: 2000,
+          easing: Easing.linear
+        }),
+        animated.timing(this.animatedValueRotate, {
+          toValue: 1,
+          duration: 2000,
+          easing: Easing.linear
+        })
+      ]),
+      animated.parallel([
+        animated.timing(this.spinValue, {
+          toValue: 0,
+          duration: 2000,
+          easing: Easing.linear
+        }),
+        animated.timing(this.animatedValueRotate, {
+          toValue: 0,
+          duration: 2000,
+          easing: Easing.linear
+        })
+      ])
+    ])
+    .start(() => {
+      this.animationRotate();
+    });
 
-      this.spin = this.spinValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: ["0deg", "360deg"]
-      });
-    }
+  this.spin = this.spinValue.interpolate({
+    inputRange: [0, 1],
+    outputRange: ["0deg", "360deg"]
+  });
+}
 ```
 
 The `spin` value interpolates from 0 to 360.
 
 <div class="hello-world-container">
   <div class="hello-world-wrapper">
-    <img src="./images/animation-rotate-only.gif" class="img-wrapper" />
+    <img src="./../images/animation-rotate-only.gif" class="img-wrapper" />
   </div>
 </div>
 
@@ -330,7 +328,7 @@ The `movingMargin` from 0 to the width of the screen.
 
 <div class="hello-world-container">
   <div class="hello-world-wrapper">
-    <img src="./images/animation-rotate-move-full.gif" class="img-wrapper" />
+    <img src="./../images/animation-rotate-move-full.gif" class="img-wrapper" />
   </div>
 </div>
 
@@ -346,23 +344,22 @@ The animated properties are :
 ```html
 <template>
   <view class="container">
-     <animatedView
-     class="animatedviewstyle"
-        :style="{
-          marginLeft: marginLeft,
-          marginTop: marginTop,
-
-          backgroundColor: interpolateColor,
-          transform: [{rotateY},{rotateX}]
-          }"
-          />
-</view>
+    <animatedView
+      class="animated-view-style"
+      :style="{
+        marginLeft: marginLeft,
+        marginTop: marginTop,
+        backgroundColor: interpolateColor,
+        transform: [{rotateY},{rotateX}]
+      }"
+    />
+  </view>
 </template>
 ```
 
 ```css
 <style>
-.animatedviewstyle{
+.animated-view-style{
     height: 100;
     width: 100;
 }
@@ -375,77 +372,76 @@ The animated properties are :
 Let's first build the first half of the animation and then the other half is just reversing the same.
 
 ```js
-animated
-        .sequence([
-          animated.parallel([
-            animated.timing(this.animatedValue, {
-              toValue: 1,
-              duration: this.duration,
-              easing: Easing.linear
-            }),
-            animated.timing(this.animatedValue1, {
-              toValue: 1,
-              duration: 1000,
-              easing: Easing.linear
-            }),
-            animated.timing(this.animatedColorValue, {
-              toValue: 150,
-              duration: 1000
-            })
-          ]),
+animated.sequence([
+  animated.parallel([
+    animated.timing(this.animatedValue, {
+      toValue: 1,
+      duration: this.duration,
+      easing: Easing.linear
+    }),
+    animated.timing(this.animatedValue1, {
+      toValue: 1,
+      duration: 1000,
+      easing: Easing.linear
+    }),
+    animated.timing(this.animatedColorValue, {
+      toValue: 150,
+      duration: 1000
+    })
+  ]),
 
-          animated.parallel([
-            animated.timing(this.animatedValue2, {
-              toValue: 1,
-              duration: this.duration,
-              easing: Easing.linear
-            }),
-            animated.timing(this.animatedValue1a, {
-              toValue: 1,
-              duration: 1000,
-              easing: Easing.linear
-            })
-          ]),
+  animated.parallel([
+    animated.timing(this.animatedValue2, {
+      toValue: 1,
+      duration: this.duration,
+      easing: Easing.linear
+    }),
+    animated.timing(this.animatedValue1a, {
+      toValue: 1,
+      duration: 1000,
+      easing: Easing.linear
+    })
+  ]),
 
-            ...
+    ...
 
-            ...
+    ...
 
-        ]).start();
+]).start();
 
-    this.marginLeft = 0;
-      this.marginTop = 0;
-      this.marginLeft = this.animatedValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [0, 200]
-      });
+this.marginLeft = 0;
+this.marginTop = 0;
+this.marginLeft = this.animatedValue.interpolate({
+  inputRange: [0, 1],
+  outputRange: [0, 200]
+});
 
-      this.rotateY = this.animatedValue1.interpolate({
-        inputRange: [0, 1],
-        outputRange: ["0deg", "180deg"]
-      });
+this.rotateY = this.animatedValue1.interpolate({
+  inputRange: [0, 1],
+  outputRange: ["0deg", "180deg"]
+});
 
-      this.interpolateColor = this.animatedColorValue.interpolate({
-        inputRange: [0, 150],
-        outputRange: ["rgb(128,0,128)", "rgb(51, 250, 170)"]
-      });
+this.interpolateColor = this.animatedColorValue.interpolate({
+  inputRange: [0, 150],
+  outputRange: ["rgb(128,0,128)", "rgb(51, 250, 170)"]
+});
 
-      this.marginTop = this.animatedValue2.interpolate({
-        inputRange: [0, 1],
-        outputRange: [0, 200]
-      });
+this.marginTop = this.animatedValue2.interpolate({
+  inputRange: [0, 1],
+  outputRange: [0, 200]
+});
 
-      this.rotateX = this.animatedValue1a.interpolate({
-        inputRange: [0, 1],
-        outputRange: ["0deg", "180deg"]
-      });
+this.rotateX = this.animatedValue1a.interpolate({
+  inputRange: [0, 1],
+  outputRange: ["0deg", "180deg"]
+});
 ```
 
 The above code snippet produces the following :
 
 <div class="hello-world-container">
   <div class="hello-world-wrapper">
-    <img src="./images/animation-flip-first.gif" class="img-wrapper" />
+    <img src="./../images/animation-flip-first.gif" class="img-wrapper" />
   </div>
 </div>
 
@@ -455,7 +451,7 @@ The completed animation looks like this :
 
 <div class="hello-world-container">
   <div class="hello-world-wrapper">
-    <img src="./images/animation-flip-full.gif" class="img-wrapper" />
+    <img src="./../images/animation-flip-full.gif" class="img-wrapper" />
   </div>
 </div>
 
@@ -467,50 +463,44 @@ Since all four animations need to happen with some sort of delay and because we 
 
 ```html
 <template>
-  <view class="parentcontainer" >
-         <!-- <animated-rotate></animated-rotate> -->
-     <!-- <animated-flip></animated-flip> -->
-
+  <view class="parent-container" >
     <view class="container">
-     <animatedView
-     class="animatedviewstyle"
+      <animatedView
+        class="animated-view-style"
         :style="{
           marginBottom: movingMargin,
           backgroundColor: 'red',
-          }"
-          />
-          <animatedView
-          class="animatedviewstyle"
+        }"
+      />
+      <animatedView
+        class="animated-view-style"
         :style="{
           marginBottom: movingMargin1,
-
           backgroundColor: 'green',
-          }"
-          />
-          <animatedView
-          class="animatedviewstyle"
+        }"
+      />
+      <animatedView
+        class="animated-view-style"
         :style="{
           marginBottom: movingMargin2,
           backgroundColor: 'blue',
-
-          }"
-          />
-          <animatedView
-            class="animatedviewstyle"
-            :style="{
-            marginBottom: movingMargin3,
-            backgroundColor: 'purple',
-            }"
-          />
-          </view>
-          <!-- </view>  -->
+        }"
+      />
+      <animatedView
+        class="animated-view-style"
+        :style="{
+          marginBottom: movingMargin3,
+          backgroundColor: 'purple',
+        }"
+      />
     </view>
+  </view>
 </template>
 ```
 
 ```css
 <style>
-.animatedviewstyle{
+.animated-view-style{
     height: 50;
     width: 50;
     border-radius:50;
@@ -521,7 +511,7 @@ Since all four animations need to happen with some sort of delay and because we 
     align-items:'flex-end';
     height:300;
 }
-.parentcontainer{
+.parent-container{
     flex-direction:'column';
     justify-content:'center';
 }
@@ -532,70 +522,63 @@ Jumping into our animation function ,
 
 ```js
 animate: function() {
-      this.animatedValue.setValue(0);
-      this.animatedValue1.setValue(0);
-      this.animatedValue2.setValue(0);
-      this.animatedValue3.setValue(0);
+  this.animatedValue.setValue(0);
+  this.animatedValue1.setValue(0);
+  this.animatedValue2.setValue(0);
+  this.animatedValue3.setValue(0);
 
-      animated
-        .stagger(100, [
-          animated.timing(this.animatedValue3, {
-            toValue: 2,
-            duration: this.duration,
-            easing: Easing.linear
-          }),
+  animated.stagger(100, [
+      animated.timing(this.animatedValue3, {
+        toValue: 2,
+        duration: this.duration,
+        easing: Easing.linear
+      }),
 
-          // animated.delay(700),
-          animated.timing(this.animatedValue2, {
-            toValue: 2,
-            duration: this.duration,
-            easing: Easing.linear
-          }),
+      animated.timing(this.animatedValue2, {
+        toValue: 2,
+        duration: this.duration,
+        easing: Easing.linear
+      }),
 
-          // animated.delay(700),
-          animated.timing(this.animatedValue1, {
-            toValue: 2,
-            duration: this.duration,
-            easing: Easing.linear
-          }),
-          animated.timing(this.animatedValue, {
-            toValue: 2,
-            duration: this.duration,
-            easing: Easing.linear
-          })
-          // animated.delay(700),
-        ])
-        .start(event => {
-          // console.log(event);
-          if (event.finished) {
-            this.animate();
-          }
-          // this.animate();
-        });
-      this.movingMargin = this.animatedValue.interpolate({
-        inputRange: [0, 0.5, 1, 1.5, 2],
-        outputRange: [0, 200, 0, 200, 0]
-      });
-      this.movingMargin1 = this.animatedValue1.interpolate({
-        inputRange: [0, 0.5, 1, 1.5, 2],
-        outputRange: [0, 200, 0, 200, 0]
-      });
-      this.movingMargin2 = this.animatedValue2.interpolate({
-        inputRange: [0, 0.5, 1, 1.5, 2],
-        outputRange: [0, 200, 0, 200, 0]
-      });
-      this.movingMargin3 = this.animatedValue3.interpolate({
-        inputRange: [0, 0.5, 1, 1.5, 2],
-        outputRange: [0, 200, 0, 200, 0]
-      });
+      animated.timing(this.animatedValue1, {
+        toValue: 2,
+        duration: this.duration,
+        easing: Easing.linear
+      }),
+      animated.timing(this.animatedValue, {
+        toValue: 2,
+        duration: this.duration,
+        easing: Easing.linear
+      })
+  ]).start(event => {
+    if (event.finished) {
+      this.animate();
     }
+  });
+  this.movingMargin = this.animatedValue.interpolate({
+    inputRange: [0, 0.5, 1, 1.5, 2],
+    outputRange: [0, 200, 0, 200, 0]
+  });
+  this.movingMargin1 = this.animatedValue1.interpolate({
+    inputRange: [0, 0.5, 1, 1.5, 2],
+    outputRange: [0, 200, 0, 200, 0]
+  });
+  this.movingMargin2 = this.animatedValue2.interpolate({
+    inputRange: [0, 0.5, 1, 1.5, 2],
+    outputRange: [0, 200, 0, 200, 0]
+  });
+  this.movingMargin3 = this.animatedValue3.interpolate({
+    inputRange: [0, 0.5, 1, 1.5, 2],
+    outputRange: [0, 200, 0, 200, 0]
+  });
+}
 ```
 
 The `animated.stagger` executes each of the animation types provided to it at a delay of `100`. Meaning the second animation is started after 100 ms after the first one starts and so on.
 
 <div class="hello-world-container">
   <div class="hello-world-wrapper">
-    <img src="./images/animation-loading.gif" class="img-wrapper" />
+    <img src="./../images/animation-loading.gif" class="img-wrapper" />
   </div>
 </div>
 
@@ -607,18 +590,18 @@ The below snippet shows just one component using these animated properties :
 
 ```html
 <animatedView
-class = "animatedviewstyle"
-        :style="{
-          marginLeft: movingMargin,
-          left: springValue,
-          backgroundColor: 'purple',
-          }"
+  class = "animated-view-style"
+  :style="{
+    marginLeft: movingMargin,
+    left: springValue,
+    backgroundColor: 'purple',
+  }"
 />
 ```
 
 ```css
 <style>
-.animatedviewstyle{
+.animated-view-style{
     height: 50;
     width: 50;
     border-radius:50;
@@ -630,94 +613,88 @@ The animation function is here similar to the previous one. But in this, we have
 
 ```js
 animate: function() {
-      this.animatedValue.setValue(0);
-      this.animatedValue1.setValue(0);
-      this.animatedValue2.setValue(0);
-      this.animatedValue3.setValue(0);
-      this.springValue.setValue(20);
-      this.springValue1.setValue(20);
-      this.springValue2.setValue(20);
-      this.springValue3.setValue(20);
+  this.animatedValue.setValue(0);
+  this.animatedValue1.setValue(0);
+  this.animatedValue2.setValue(0);
+  this.animatedValue3.setValue(0);
+  this.springValue.setValue(20);
+  this.springValue1.setValue(20);
+  this.springValue2.setValue(20);
+  this.springValue3.setValue(20);
+    animated.stagger(100, [
+      animated.sequence([
+        animated.timing(this.animatedValue, {
+          toValue: 2,
+          duration: this.duration,
+          easing: Easing.linear
+        }),
+        animated.spring(this.springValue, {
+          toValue: 0,
+          friction: 1
+        })
+      ]),
+      animated.sequence([
+        animated.timing(this.animatedValue1, {
+          toValue: 2,
+          duration: this.duration,
+          easing: Easing.linear
+        }),
+        animated.spring(this.springValue1, {
+          toValue: 0,
+          friction: 1
+        })
+      ]),
+      animated.sequence([
+        animated.timing(this.animatedValue2, {
+          toValue: 2,
+          duration: this.duration,
+          easing: Easing.linear
+        }),
+        animated.spring(this.springValue2, {
+          toValue: 0,
+          friction: 1
+        })
+      ]),
+      animated.sequence([
+        animated.timing(this.animatedValue3, {
+          toValue: 2,
+          duration: this.duration,
+          easing: Easing.linear
+        }),
+        animated.spring(this.springValue3, {
+          toValue: 0,
+          friction: 1
+        })
+      ])
 
-          animated.stagger(100, [
-            // animated.delay(700),
-
-            // animated.delay(700),
-            animated.sequence([
-              animated.timing(this.animatedValue, {
-                toValue: 2,
-                duration: this.duration,
-                easing: Easing.linear
-              }),
-              animated.spring(this.springValue, {
-                toValue: 0,
-                friction: 1
-              })
-            ]),
-
-            animated.sequence([
-              animated.timing(this.animatedValue1, {
-                toValue: 2,
-                duration: this.duration,
-                easing: Easing.linear
-              }),
-              animated.spring(this.springValue1, {
-                toValue: 0,
-                friction: 1
-              })
-            ]),
-            animated.sequence([
-              animated.timing(this.animatedValue2, {
-                toValue: 2,
-                duration: this.duration,
-                easing: Easing.linear
-              }),
-              animated.spring(this.springValue2, {
-                toValue: 0,
-                friction: 1
-              })
-            ]),
-            animated.sequence([
-              animated.timing(this.animatedValue3, {
-                toValue: 2,
-                duration: this.duration,
-                easing: Easing.linear
-              }),
-              animated.spring(this.springValue3, {
-                toValue: 0,
-                friction: 1
-              })
-            ])
-
-            // animated.delay(700),
-          ])
-        .start(() => {
-          this.animate();
-        });
-
-      this.movingMargin = this.animatedValue.interpolate({
-        inputRange: [0, 1],
-        outputRange: [0, 100]
-      });
-      this.movingMargin1 = this.animatedValue1.interpolate({
-        inputRange: [0, 1],
-        outputRange: [0, 100]
-      });
-      this.movingMargin2 = this.animatedValue2.interpolate({
-        inputRange: [0, 1],
-        outputRange: [0, 100]
-      });
-      this.movingMargin3 = this.animatedValue3.interpolate({
-        inputRange: [0, 1],
-        outputRange: [0, 100]
-      });
-    }
+      // animated.delay(700),
+  ])
+  .start(() => {
+    this.animate();
+  });
+  this.movingMargin = this.animatedValue.interpolate({
+    inputRange: [0, 1],
+    outputRange: [0, 100]
+  });
+  this.movingMargin1 = this.animatedValue1.interpolate({
+    inputRange: [0, 1],
+    outputRange: [0, 100]
+  });
+  this.movingMargin2 = this.animatedValue2.interpolate({
+    inputRange: [0, 1],
+    outputRange: [0, 100]
+  });
+  this.movingMargin3 = this.animatedValue3.interpolate({
+    inputRange: [0, 1],
+    outputRange: [0, 100]
+  });
+}
 ```
 
 The above produces this which is just a treat to the eyes.
 
 <div class="hello-world-container">
   <div class="hello-world-wrapper">
-    <img src="./images/animation-stagger.gif" class="img-wrapper" />
+    <img src="./../images/animation-stagger.gif" class="img-wrapper" />
   </div>
 </div>
