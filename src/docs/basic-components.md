@@ -57,7 +57,7 @@ A foundational component for inputting text into the app via a keyboard. Props p
 ```html
 <template>
     <text-input
-        :style="{height: 40, border-color: 'gray', border-width: 1}"
+        :style="{height: 40, borderColor: 'gray', borderWidth: 1}"
         v-model="text"
       />
 </template>
@@ -82,7 +82,7 @@ ScrollView simply renders all its react child components at once. That makes it 
 ```html
 <template>
     <scroll-view :content-container-style="{contentContainer: {
-        padding-vertical: 20
+        paddingVertical: 20
     }}">
         // Content goes here
     </scroll-view>
@@ -158,7 +158,7 @@ Displays a circular loading indicator.
 
 ```html
 <template>
-    <view :style="{flex: 1, justify-content: 'center'}">
+    <view :style="{flex: 1, justifyContent: 'center'}">
         <activity-indicator size="large" color="#0000ff" />
     </view>
 </template>
@@ -240,7 +240,7 @@ This is a controlled component that requires an `on-value-change` callback that 
             }
         },
         methods: {
-            handleChange: () => {
+            handleChange: function() {
                 this.value = !this.value
             }
         }
@@ -256,7 +256,7 @@ A wrapper for making views respond properly to touches. On press down, the opaci
 <template>
     <touchable-opacity :on-press="onPressButton">
       <image
-        :style="{align-items: 'center', background-color: '#DDDDDD'}"
+        :style="{alignItems: 'center', backgroundColor: '#DDDDDD'}"
         :source="{require('./myButton.png')}"
       />
     </touchable-opacity>
@@ -266,7 +266,7 @@ A wrapper for making views respond properly to touches. On press down, the opaci
 <script>
     export default {
         methods: {
-            onPressButton: () => {
+            onPressButton: function() {
                 alert('Clicked Image')
             }
         }

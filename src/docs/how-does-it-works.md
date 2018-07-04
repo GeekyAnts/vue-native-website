@@ -1,7 +1,7 @@
 ---
 title: How does it work?
 type: guide
-order: 12
+order: 13
 vue_version: 2.5.13
 gz_size: "30.67"
 ---
@@ -12,9 +12,9 @@ Vue-native-core is designed to connect React and Vue, which help you run Vue in 
 
 There are three uses.
 
-* Use the [reactivity system](https://github.com/SmallComfort/react-vue/blob/dev/README.md#reactivity-system) of Vue to observer React component
-* Use the [react-vue-loader](https://github.com/SmallComfort/react-vue/blob/dev/README.md#vue-component) to run Vue component in React application
-* Use the [vue-native-scripts](https://github.com/SmallComfort/react-vue/blob/dev/README.md#native) to run Vue component in React Native
+- Use the [reactivity system](https://github.com/SmallComfort/react-vue/blob/dev/README.md#reactivity-system) of Vue to observer React component
+
+- Use the [vue-native-scripts](https://github.com/SmallComfort/react-vue/blob/dev/README.md#native) to run Vue component in React Native
 
 ### Reactivity System
 
@@ -50,9 +50,6 @@ export default class Demo extends Component {
 ```
 
 [document](https://github.com/GeekyAnts/vue-native-core/blob/master/packages/vue-native-core/README.md)
-
-### Vue Component
-Introduce react-vue-loader, which compile the Vue component into a React component. As you might think, your previously written Vue components can run inside the React component, and your React components can also run inside the Vue component.
 
 ### Vue Native Scripts
 
