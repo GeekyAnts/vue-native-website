@@ -68,7 +68,7 @@ You must request permission to access the user's location before attempting to g
   <view class="container">
     <text>Location:</text>
     <text>{{location.latitude}}</text>
-    <touchable-opacity :on-press="getLocationAsync" >
+    <touchable-opacity :on-press="getLocation" >
         <text>get location</text>
     </touchable-opacity>
   </view>
@@ -85,7 +85,7 @@ export default {
     };
   },
   methods: {
-    getLocationAsync: function() {
+    getLocation: function() {
       Permissions.askAsync(Permissions.LOCATION).then(status => {
         if (status !== "granted") {
           errorMessage = "Permission to access location was denied";
@@ -93,7 +93,9 @@ export default {
         Location.getCurrentPositionAsync({}).then(location1 => {
           location = location1;
         });
-      });
+      }).catch((err)=>{
+        console.log(err);
+     });
     }
   }
 };
@@ -135,7 +137,6 @@ Requires `Permissions.CAMERA`. Video recording requires `Permissions.AUDIO_RECOR
 ```js
 <script>
 import { Camera, Permissions } from "expo";
-
 export default {
  data: function() {
    return {
@@ -143,15 +144,15 @@ export default {
      type: Camera.Constants.Type.back,
    };
  },
- created: function() {},
  mounted: function() {
    Permissions.askAsync(Permissions.CAMERA)
      .then(status => {
        hasCameraPermission = status.status == "granted" ? true : false;
+     }).catch((err)=>{
+        console.log(err);
      });
  },
  components: { Camera },
- methods: {}
 };
 </script>
 ```
