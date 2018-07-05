@@ -1,7 +1,7 @@
 ---
 title: Composing with components
 type: guide
-order: 7
+order: 8
 vue_version: 2.5.13
 gz_size: "30.67"
 ---
@@ -13,11 +13,13 @@ The component system is another important concept in Vue Native, because it's an
 In Vue Native, registering a component is straightforward, you can simply declare the component in the `components` property:
 
 create a `todoItem.vue` file
-``` html
+
+```html
 <template>
   <text> {{item.id}}. {{item.text}} </text>
 </template>
 ```
+
 ```js
 <script>
 export default {
@@ -31,6 +33,7 @@ export default {
 ```
 
 create another `.vue file` and import the above `todoItem` components
+
 ```html
 <template>
   <view class="container">
@@ -49,6 +52,7 @@ create another `.vue file` and import the above `todoItem` components
   </view>
 </template>
 ```
+
 ```js
 <script>
 import TodoItem from "./todoItem";
@@ -66,6 +70,7 @@ export default {
 };
 </script>
 ```
+
 ```css
 <style>
 .container {
@@ -98,7 +103,7 @@ This is a contrived example, but we have managed to separate our app into two sm
 
 In a large application, it is necessary to divide the whole app into components to make development manageable. We will talk a lot more about components, but here's an (imaginary) example of what an app's template might look like with components:
 
-``` html
+```html
 <view>
   <app-nav></app-nav>
   <app-view>

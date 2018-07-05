@@ -1,14 +1,14 @@
 ---
 title: Conditionals and Loops
 type: guide
-order: 6
+order: 7
 vue_version: 2.5.13
 gz_size: "30.67"
 ---
 
 It's easy to toggle the presence of an element, too:
 
-``` html
+```html
 <view>
   <text v-if="seen">Now you see me</text>
 </view>
@@ -30,13 +30,14 @@ This example demonstrates that we can bind data, and dynamically manipulate the 
 
 There are quite a few other directives, each with its own special functionality. For example, the `v-for` directive can be used for displaying a list of items using the data from an Array:
 
-``` html
+```html
 <view class="container">
   <text class="text-container" v-for="todo in todos" :key="todo.text">
     {{ todo.text }}
   </text>
 </view>
 ```
+
 ```JS
 <script>
 export default {
