@@ -44,7 +44,7 @@ Run `npm test -- -u` which runs the test and creates a `snapshot` and replaces a
 
 The snapshot created looks something like this :
 
-```
+```js
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Login Component renders correctly 1`] = `
@@ -109,7 +109,7 @@ The vue file used here looks like this :
 
 ```html
 <template>
-<text>abc</text>
+  <text>abc</text>
 </template>
 ```
 

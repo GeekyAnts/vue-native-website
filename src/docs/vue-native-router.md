@@ -88,6 +88,14 @@ const AppNavigation = StackNavigator(
 );
 ```
 
+Then use the `AppNavigation` the same way shown earlier.
+
+```html
+<template>
+  <app-navigation></app-navigation>
+</template>
+```
+
 ## Tab Navigation
 
 Possibly the most common style of navigation in mobile apps is tab-based navigation.
@@ -97,13 +105,29 @@ You can use `TabNavigator` API to implement tab based routing.
 const tabNav = TabNavigator(
   {
     Home: HomeScreen,
-    Answer: DetailsScreen
+    Details: DetailsScreen
   },
   {
     tabBarPosition: "bottom",
     tabBarComponent: TabBarBottom
   }
 );
+```
+
+`tabNav` is then used in our `template` after mentioning it under `components`.
+
+```js
+components: {
+  tabNav;
+}
+```
+
+```html
+<template>
+  <view>
+    <tab-nav></tab-nav>
+  </view>
+</template>
 ```
 
 ## Further Information
