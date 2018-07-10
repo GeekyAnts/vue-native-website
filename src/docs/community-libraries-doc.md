@@ -61,6 +61,12 @@ Now you are ready to use the kebab-case equivalent of the import in your `templa
 </template>
 ```
 
+<div class="hello-world-container">
+  <div class="hello-world-wrapper">
+    <img src="./../images/icons-example" class="img-wrapper" />
+  </div>
+</div>
+
 ### Icon images
 
 If you know how to use the React Native `<Image>` component this will be a breeze.
@@ -126,6 +132,12 @@ export default {
 }
 </style>
 ```
+
+<div class="hello-world-container">
+  <div class="hello-world-wrapper">
+    <img src="./../images/maps-example.JPG" class="img-wrapper" />
+  </div>
+</div>
 
 ## Lottie
 
