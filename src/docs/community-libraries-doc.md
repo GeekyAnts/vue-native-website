@@ -1,7 +1,7 @@
 ---
 title: Community Libraries
 type: guide
-order: 14
+order: 15
 vue_version: 2.5.13
 gz_size: "30.67"
 ---
@@ -60,6 +60,12 @@ Now you are ready to use the kebab-case equivalent of the import in your `templa
   </view>
 </template>
 ```
+
+<div class="hello-world-container">
+  <div class="hello-world-wrapper">
+    <img src="./../images/icons-example" class="img-wrapper" />
+  </div>
+</div>
 
 ### Icon images
 
@@ -126,6 +132,12 @@ export default {
 }
 </style>
 ```
+
+<div class="hello-world-container">
+  <div class="hello-world-wrapper">
+    <img src="./../images/maps-example.JPG" class="img-wrapper" />
+  </div>
+</div>
 
 ## Lottie
 

@@ -21,6 +21,8 @@ Here's the sample app where we have used the plugin [KitchenSink](https://github
 ```js
 <script>
 import { StackNavigator } from "vue-native-router";
+import HomeScreen from "../src/screens/homeScreen.vue";
+import DetailsScreen from "../src/screens/detailsScreen.vue";
 const AppNavigation = StackNavigator(
   {
     Home: HomeScreen,
@@ -69,39 +71,65 @@ You can initialize the drawer using DrawerNavigator API and create a sidebar com
 
 ```
 const Drawer = DrawerNavigator(
-    {
-        Home: { screen: HomeScreen }
-    },
-    {
-        initialRouteName: "Home"
-    },
-    contentComponent: props => {
-      return <SideBarScreen {...props} />;
-    }
-);
-
-const RootStack = StackNavigator(
   {
-    Home: { screen: HomeScreen},
-    Drawer: { screen: Drawer },
+    Home: HomeScreen
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: "Home",
   }
 );
+const AppNavigation = StackNavigator(
+  {
+    Drawer: Drawer
+  },
+  {
+    initialRouteName: "Drawer"
+  }
+);
+```
+
+Then use the `AppNavigation` the same way shown earlier.
+
+```html
+<template>
+  <app-navigation></app-navigation>
+</template>
 ```
 
 ## Tab Navigation
 
 Possibly the most common style of navigation in mobile apps is tab-based navigation.
-You can use `createBottomTabNavigator` API to implement tab based routing.
+You can use `TabNavigator` API to implement tab based routing.
 
 ```
-export default createBottomTabNavigator({
-  Home: HomeScreen
-});
+const tabNav = TabNavigator(
+  {
+    Home: HomeScreen,
+    Details: DetailsScreen
+  },
+  {
+    tabBarPosition: "bottom",
+    tabBarComponent: TabBarBottom
+  }
+);
+```
+
+`tabNav` is then used in our `template` after mentioning it under `components`.
+
+```js
+components: {
+  tabNav;
+}
+```
+
+```html
+<template>
+  <view>
+    <tab-nav></tab-nav>
+  </view>
+</template>
 ```
 
 ## Further Information
 
-Since the app is based on React Navigation. You can use all the API's specified in react navigation docs. https://reactnavigation.org/docs/en/api-reference.html
+Since the app is based on React Navigation v1. You can use all the API's specified in react navigation docs. https://v1.reactnavigation.org/docs/getting-started.html
