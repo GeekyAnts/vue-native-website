@@ -6,7 +6,7 @@ vue_version: 2.5.13
 gz_size: "30.67"
 ---
 
-`Note : Slots are supported only with vue-native-core version 0.0.1 and above.`
+`Note : Slots are supported only with vue-native-helper version 0.0.9 and above.`
 
 ## Slot Content
 
@@ -61,7 +61,7 @@ Consider this parent element :
 
 Specify the slot names in the attribute `slot`.
 
-The `<slot>` element in the child component has a special attribute, `name`, which can be used to define additional slots.
+The `<slot>` element in the child component has a special attribute, `name`, which can be used to define named slots.
 
 ```html
 <template>
@@ -83,4 +83,4 @@ Top text
 Text with no name
 ```
 
-Notice that the order of the texts rendered-- corresponds to the `slots` arranged in the child component.
+Notice that the order of the texts rendered-- corresponds to the `slots` arranged in the child component. The unnamed slot acts as the default slot.
