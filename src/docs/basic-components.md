@@ -257,7 +257,7 @@ This is a controlled component that requires an `on-value-change` callback that 
 </script>
 ```
 
-The above can also be implemented using `v-model` from `vue-native-core` version `0.0.1` and above.
+The above can also be implemented using `v-model` from `vue-native-template-compiler` version `0.0.10` and above.
 
 ```html
 <template>
