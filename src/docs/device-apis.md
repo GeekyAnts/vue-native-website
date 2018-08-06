@@ -1,7 +1,7 @@
 ---
 title: Device APIs
 type: guide
-order: 10
+order: 11
 vue_version: 2.5.13
 gz_size: "30.67"
 ---

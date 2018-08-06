@@ -1,7 +1,7 @@
 ---
 title: Vue Native Router
 type: guide
-order: 13
+order: 14
 vue_version: 2.5.13
 gz_size: "30.67"
 ---
