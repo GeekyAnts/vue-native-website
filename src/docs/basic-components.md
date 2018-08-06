@@ -257,6 +257,16 @@ This is a controlled component that requires an `on-value-change` callback that 
 </script>
 ```
 
+The above can also be implemented using `v-model` from `vue-native-template-compiler` version `0.0.10` and above.
+
+```html
+<template>
+    <view style = {styles.container}>
+        <switch v-model="value"/>
+    </view>
+</template>
+```
+
 ### TouchableOpacity
 
 A wrapper for making views respond properly to touches. On press down, the opacity of the wrapped view is decreased, dimming it.

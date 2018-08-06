@@ -1,7 +1,7 @@
 ---
 title: React Native
 type: guide
-order: 11
+order: 13
 vue_version: 2.5.13
 gz_size: "30.67"
 ---
