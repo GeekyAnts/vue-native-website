@@ -6,9 +6,7 @@ vue_version: 2.5.13
 gz_size: "30.67"
 ---
 
-`Note : Slots are supported only with vue-native-helper version 0.0.9 and above.`
-
-
+> Note : Slots are supported only with vue-native-helper version 0.0.9 and above.
 
 ## Slot Content
 
@@ -63,12 +61,7 @@ Consider this parent element :
 
 Specify the slot names in the attribute `slot`.
 
-<<<<<<< HEAD
-The `<slot>` element in the child component has a special attribute, `name`, which can be used to define additional slots.
-=======
 The `<slot>` element in the child component has a special attribute, `name`, which can be used to define named slots.
-
-> > > > > > > 6e2884c16a488593d2a8108b126678a2b0a071c5
 
 ```html
 <template>
@@ -96,7 +89,7 @@ Notice that the order of the texts rendered-- corresponds to the `slots` arrange
 
 Sometimes you’ll want to provide a component with a reusable slot that can access data from the child component. For example, when building a simple `<todo-list>` component, in some parts of the app, you may want the individual todo items to render something different than just what was defined in the `<todo-list>`. This is where scoped slots come in.
 
-To understand this better let's take a simple example, consider two components named `parent` and `child`, conveiently named to explain this better.
+To understand this better let's take a simple example, consider two components named `parent` and `child`, conveniently named to explain this better.
 
 Both these components look like this:
 
@@ -120,10 +113,10 @@ A `scope` attribute can be used to receive the props for the slot from the child
 //Child component
 <template>
   <view class="container">
-     <slot v-bind:texts="texts">
+    <slot v-bind:texts="texts">
       {{ texts.text }}
     </slot>
-    </view>
+  </view>
 </template>
 ```
 
