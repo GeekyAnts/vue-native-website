@@ -6,6 +6,8 @@ vue_version: 2.5.13
 gz_size: "30.67"
 ---
 
+#### If you want to use a third party library refer to react-native packages instead of vuejs especially if the library uses render function or is dependent on html since vue-native does not work on html.
+
 There are several contributions from the community that can be used in Vue-native and some of them are listed below :
 
 ## Icons
@@ -233,5 +235,75 @@ export default {
 ## Native base
 
 Refer [here](https://docs.nativebase.io/docs/GetStarted.html) to know how to use Native Base in Vue-native.
+
+## GraphQl
+
+We can use ApolloProvider and Query Component from react-apollo to implement graphQl in vue-native. The vue-apollo cannot be used since it's based on dynamic render function.
+
+```html
+<template>
+   <view class="container">
+    <apollo-provider :client="client">
+      <query :query="cquery">
+        <view render-prop-fn="children">
+          <text v-if="args.loading">Loading...</text>
+          <text v-else-if="args.error">An error occured</text>
+          <view v-if="args.data && args.data.lookup">
+            <text v-for="album in args.data.lookup.artist.releaseGroups.edges">
+              {{album.node.title}}
+            </text>
+          </view>
+        </view>
+      </query>
+    </apollo-provider>
+   </view>
+</template>
+```
+
+```js
+<script>
+import { ApolloClient } from 'apollo-client';
+import { HttpLink } from 'apollo-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory'
+import { ApolloProvider, Query } from 'react-apollo';
+
+const client = new ApolloClient({
+  link: new HttpLink({ uri: 'https://graphbrainz.herokuapp.com/' }),
+  cache: new InMemoryCache()
+});
+
+import { GET_NAMES } from "./queries.js";
+export default {
+  data: {
+    client: client,
+    cquery: GET_NAMES
+  },
+  components: { ApolloProvider, Query }
+};
+</script>
+```
+
+queries.js
+```js
+import { gql } from "apollo-boost";
+
+export const GET_NAMES = gql`
+  query NirvanaAlbumSingles {
+    lookup {
+        artist(mbid: "5b11f4ce-a62d-471e-81fc-a69a8278c7da") {
+        name
+        releaseGroups(type: ALBUM) {
+          edges {
+            node {
+              title
+              firstReleaseDate
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+```
 
 <!-- (https://docs.nativebase.io/docs/GetStarted.html) -->
