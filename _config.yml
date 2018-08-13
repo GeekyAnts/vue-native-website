@@ -3,16 +3,16 @@
 ## Source: https://github.com/tommy351/hexo/
 
 # Site
-title: Vue.js
+title: Vue NAtive
 subtitle:
-description: "The Progressive JavaScript Framework"
-author: Evan You
+description: "Vuejsfor Mobile Apps"
+author: GeekyAnts
 email:
 language:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://vuejs.org
+url: https://vuenative.io
 root: /
 permalink: :year/:month/:day/:title/
 tag_dir: tags
