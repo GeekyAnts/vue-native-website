@@ -7,9 +7,11 @@ order: 4
 At the core of Vue Native is a system that enables us to declaratively render data using straightforward template syntax:
 
 ``` html
-<view>
-  <text>{{ message }}</text>
-</view>
+<template>
+  <view>
+    <text>{{ message }}</text>
+  </view>
+</template>
 ```
 ```JS
 <script>
@@ -28,9 +30,11 @@ We have already created our very first `Vue Native` app! This looks pretty simil
 In addition to text interpolation, we can also bind element attributes like this:
 
 ``` html
-<view>
-  <button v-bind:title="message" v-bind:on-press="handleBtnPress"/>
-</view>
+<template>
+  <view>
+    <button v-bind:title="message" v-bind:on-press="handleBtnPress"/>
+  </view>
+</template>
 ```
 ```JS
 <script>
