@@ -4,5 +4,6 @@ db.json
 *.log
 node_modules/
 public/
+dist/
 .deploy*/
 src/_drafts
