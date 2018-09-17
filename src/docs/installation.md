@@ -57,7 +57,7 @@ Like npm start, but also attempts to open your app on a connected Android device
 ** Step 1 Create React Native Project **
 
 ```
-react-native init <projectName>
+react-native init <projectName> --version <version> /* Version should be <= 0.55.4
 cd <projectName>
 ```
 

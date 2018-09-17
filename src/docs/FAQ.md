@@ -8,6 +8,10 @@ gz_size: "30.67"
 
 ## Frequently Asked Questions
 
+### what are the advantages/differences of Vue Native over React Native
+
+Vue Native is layer based on top of React Native. The template definition is based on Vuejs which is then converted into suitable react native code. With this, we are able to take advantage of the existing react native ecosystem where a lot of third party libraries and support are available.
+
 ### Can I reuse vuejs web app code?
 
 No. You cannot, since vue-native does not make use of html tags. It's not possible to reuse the vuejs web app code.
