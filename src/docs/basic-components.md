@@ -141,18 +141,20 @@ One of the drawbacks using Flatlist is the renderItem method should return JSX w
 ```html
 <template>
     <flat-list
-        :data="{[{key: 'a'}, {key: 'b'}]}"
-        :render-item="{({item}) => renderList(item)"
+        :data="[{key: 'a'}, {key: 'b'}]"
+        :render-item="(item) => renderList(item)"
     />
 </template>
 ```
 
 ```js
 <script>
+import React from 'react';
+import {Text} from 'react-native';
     export default {
         methods: {
             renderList: function(item) {
-                return (<Text>{item}<Text>)
+                return (<Text>{item.item.key}</Text>)
             }
         }
     }
