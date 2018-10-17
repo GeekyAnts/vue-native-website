@@ -71,7 +71,9 @@ A foundational component for inputting text into the app via a keyboard. Props p
 <script>
     export default {
         data: function() {
-            text: ''
+            return {
+                text: ''
+            };
         }
     }
 </script>
