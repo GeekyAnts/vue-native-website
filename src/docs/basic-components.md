@@ -40,7 +40,7 @@ A Vue Native component for displaying different types of images, including netwo
 <template>
     <view>
         <image
-          :source="{require('/vue-native/img/favicon.png')}"
+          :source="require('/vue-native/img/favicon.png')"
         />
         <image
           :style="{width: 50, height: 50}"
