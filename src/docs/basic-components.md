@@ -280,7 +280,7 @@ A wrapper for making views respond properly to touches. On press down, the opaci
     <touchable-opacity :on-press="onPressButton">
       <image
         :style="{alignItems: 'center', backgroundColor: '#DDDDDD'}"
-        :source="{require('./myButton.png')}"
+        :source="require('./myButton.png')"
       />
     </touchable-opacity>
 </template>
