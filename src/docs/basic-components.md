@@ -38,7 +38,7 @@ Text supports nesting, styling, and touch handling.
 
 A Vue Native component for displaying different types of images, including network images, static resources, temporary local images, and images from local disk, such as the camera roll.
 
-Here we can see that we are dynamically setting the `source` attribute of each image using the `v-bind` shorthand syntax "`:`". We are also `v-bind`ing to the `style` property and passing in an object with a couple key-value pairs of styles we want to apply.
+Here we can see that we are dynamically setting the `source` attribute of each image using the `v-bind` shorthand syntax "`:`". We also `v-bind` to the `style` property and pass in an object with a couple key-value pairs of styles we want to apply.
 
 ```html
 <template>
