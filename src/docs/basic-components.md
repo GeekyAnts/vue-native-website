@@ -132,18 +132,18 @@ export default {
 
 ### FlatList
 
-A FlatList is a performant interface for rendering simple flat lists, supporting the most handy features:
+A FlatList is a performant interface for rendering simple flat lists, supporting the most handy features:  
 
-. Fully cross-platform.
-. Optional horizontal mode.
-. Configurable viewability callbacks.
-. Header support.
-. Footer support.
-. Separator support.
-. Pull to Refresh.
-. Scroll loading.
-. ScrollToIndex support.
-
+- Fully cross-platform.
+- Optional horizontal mode.
+- Configurable viewability callbacks.
+- Header support.
+- Footer support.
+- Separator support.
+- Pull to Refresh.
+- Scroll loading.
+- ScrollToIndex support.  
+  
 One of the drawbacks using Flatlist is the renderItem method should return JSX with the actual React Native components. We are working on this and a fix should be available soon.
 
 Here we are binding to the data property and passing in an Array containing key-value objects. As well as rendering out the the List in our data that we are binding to and looping through.
