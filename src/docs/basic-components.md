@@ -92,7 +92,7 @@ ScrollView simply renders all its react child components at once. That makes it 
     <scroll-view :content-container-style="{contentContainer: {
         paddingVertical: 20
     }}">
-        // Content goes here
+        <!-- Content goes here -->
     </scroll-view>
 </template>
 ```
@@ -211,6 +211,7 @@ export default {
         }
     }
 }
+</script>
 ```
 
 ### StatusBar
