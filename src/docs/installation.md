@@ -12,12 +12,13 @@ This page will help you install and build your first native app using [Vue Nativ
 * Globally installed [node](https://nodejs.org/en/) >= 6.0
 * Globally installed [npm](https://www.npmjs.com/) >= 4.0
 * Globally installed [React Native CLI](https://facebook.github.io/react-native/docs/getting-started.html) which allow you to easily create and initialize projects.
+* Globally installed [Expo CLI](https://docs.expo.io/versions/latest/workflow/expo-cli/)
 
 ## Setup with Vue Native Cli
 
 [Vue Native Cli](https://github.com/GeekyAnts/vue-native-cli) is the easiest way to start building a application using [Vue Native](https://vue-native.io/).
 
-Assuming that you have globally installed [create-react-native-app](https://github.com/react-community/create-react-native-app).
+Assuming that you have globally installed [expo-cli](https://docs.expo.io/versions/latest/workflow/expo-cli/).
 
 ** Step 1 Running The App **
 
@@ -53,6 +54,9 @@ Like npm start, but also attempts to open your app on a connected Android device
 
 
 ## Setup with React Native
+
+ **Note: For RN > 0.55.4. The rn-cli.config.js and vueTransformerPlugin.js should be similar to [rn-cli.config.js](https://github.com/GeekyAnts/vue-native-starter-app/blob/feat/RN58/rn-cli.config.js) and [vueTransformerPlugin.js](https://github.com/GeekyAnts/vue-native-starter-app/blob/feat/RN58/vueTransformerPlugin.js)**
+
 
 ** Step 1 Create React Native Project **
 
