@@ -1,7 +1,7 @@
 ---
 title: Handling user input
 type: guide
-order: 9
+order: 8
 vue_version: 2.5.13
 gz_size: "30.67"
 ---

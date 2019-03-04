@@ -25,7 +25,7 @@ export default {
 </script>
 ```
 
-We have already created our very first `Vue Native` app! This looks pretty similar to rendering a string template, but under the hood a lot work is been done. The data and the native UI elements are now linked, and everything is now **reactive**.
+We have already created our very first `Vue Native` app! This looks pretty similar to rendering a template string, but under the hood a lot of work is being done. The data and the native UI elements are now linked, and everything is now **reactive**.
 
 In addition to text interpolation, we can also bind element attributes like this:
 
@@ -53,7 +53,7 @@ export default {
 </script>
 ```
 
-Here we are encountering something new. The `v-bind` attribute you are seeing is called a **directive**. Directives are prefixed with `v-` to indicate that they are special attributes provided by Vue Native, which internal bind with the React Native props and as you may have guessed, they apply special reactive behavior in re-rendering. Here, it is basically saying "keep this element's `title` attribute up-to-date with the `message` property on the Vue instance."
+Here we are encountering something new. The `v-bind` attribute. This attribute is called a **directive**. Directives are prefixed with `v-` to indicate that they are special attributes provided by Vue Native, which internal bind with the React Native props. Then-as you may have guessed-they apply special reactive behavior in re-rendering. Here, it is basically saying "keep this element's `title` attribute up-to-date with the `message` property on the Vue instance."
 
 <div class="hello-world-container">
   <div class="hello-world-wrapper">

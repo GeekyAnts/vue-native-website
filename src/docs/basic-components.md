@@ -6,14 +6,14 @@ order: 5
 
 ### View
 
-The most fundamental component for building a UI, View is a container that supports layout
-`View` is designed to be nested inside other views and can have 0 to many children of any type.
+The most fundamental component for building a User Interface (UI) are View's. A View is a container that supports layout.
+These `Views` are designed to be nested inside other views and can have any amount of child Views inside the parent View. Parent Views can nest any type of child Views inside them.  
+
+A View is kind of like the vue-native equivalant of a `<div>` in HTML.
 
 ### Text
 
-A Vue Native component for displaying text.
-
-Text supports nesting, styling, and touch handling.
+A Vue Native component for displaying text. The Text component supports nesting, styling, and touch handling.
 
 ```html
 <template>
@@ -36,6 +36,8 @@ Text supports nesting, styling, and touch handling.
 
 A Vue Native component for displaying different types of images, including network images, static resources, temporary local images, and images from local disk, such as the camera roll.
 
+Here we can see that we are dynamically setting the `source` attribute of each image using the `v-bind` shorthand syntax "`:`". We also `v-bind` to the `style` property and pass in an object with a couple key-value pairs of styles we want to apply.
+
 ```html
 <template>
     <view>
@@ -50,13 +52,15 @@ A Vue Native component for displaying different types of images, including netwo
           :style="{width: 66, height: 58}"
           :source="{uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg=='}"
         />
-      </view>
+    </view>
 </template>
 ```
 
 ### TextInput
 
 A foundational component for inputting text into the app via a keyboard. Props provide configurability for several features, such as auto-correction, auto-capitalization, placeholder text, and different keyboard types, such as a numeric keypad.
+
+In this example, we again take advantage of the `v-bind` directive, as well as a new one. The `v-model` directive. We will come back to this directive in just a bit, but for now just know that `v-model` directive allows us to set up an awesome concept known as `Two-Way Data Binding`.
 
 ```html
 <template>
@@ -81,11 +85,10 @@ A foundational component for inputting text into the app via a keyboard. Props p
 
 ### ScrollView
 
-Component that wraps platform ScrollView while providing integration with touch locking "responder" system.
+A component that wraps the platform in ScrollView while providing integration with the touch locking "responder" system. ScrollView simply renders all its react child components at once. That makes it very easy to understand and use.
 
-Keep in mind that ScrollViews must have a bounded height in order to work, since they contain unbounded-height children into a bounded container (via a scroll interaction)
+Keep in mind that ScrollViews must have a bounded height in order to work, since they contain unbounded-height children into a bounded container (via a scroll interaction).
 
-ScrollView simply renders all its react child components at once. That makes it very easy to understand and use.
 
 ```html
 <template>
@@ -100,6 +103,9 @@ ScrollView simply renders all its react child components at once. That makes it 
 ### Button
 
 A basic button component that should render nicely on any platform. Supports a minimal level of customization.
+We can do more than just bind to data and style views with Vue Directives. 
+
+This button has an event handler `on-press` that we are binding to. When that event gets fired, we run a method on our Vue Instance.
 
 ```html
 <template>
@@ -126,19 +132,21 @@ export default {
 
 ### FlatList
 
-A performant interface for rendering simple, flat lists, supporting the most handy features:
+A FlatList is a performant interface for rendering simple flat lists, supporting the most handy features:  
 
-. Fully cross-platform.
-. Optional horizontal mode.
-. Configurable viewability callbacks.
-. Header support.
-. Footer support.
-. Separator support.
-. Pull to Refresh.
-. Scroll loading.
-. ScrollToIndex support.
-
+- Fully cross-platform.
+- Optional horizontal mode.
+- Configurable viewability callbacks.
+- Header support.
+- Footer support.
+- Separator support.
+- Pull to Refresh.
+- Scroll loading.
+- ScrollToIndex support.  
+  
 One of the drawbacks using Flatlist is the renderItem method should return JSX with the actual React Native components. We are working on this and a fix should be available soon.
+
+Here we are binding to the data property and passing in an Array containing key-value objects. As well as rendering out the the List in our data that we are binding to and looping through.
 
 ```html
 <template>
@@ -165,11 +173,12 @@ import {Text} from 'react-native';
 
 ### ActivityIndicator
 
-Displays a circular loading indicator.
-
+A component that displays a circular loading indicator. This type of component is great when using in conjunction with a conditional Vue directive such as `v-if` or `v-show`, since we can toggle the visibility based on a boolean value in our Vue Instance data property.
 ```html
 <template>
-    <view :style="{flex: 1, justifyContent: 'center'}">
+    <view 
+        v-if="isLoading"
+        :style="{flex: 1, justifyContent: 'center'}">
         <activity-indicator size="large" color="#0000ff" />
     </view>
 </template>
@@ -177,9 +186,9 @@ Displays a circular loading indicator.
 
 ### Alert
 
-Launches an alert dialog with the specified title and message.
+A component that launches an alert dialog with the specified title and message. You can optionally provide a list of buttons in the alert as well. Tapping any button will fire the respective onPress callback and dismiss the alert. By default the only button rendered, will be an 'OK' button.
 
-Optionally provide a list of buttons. Tapping any button will fire the respective onPress callback and dismiss the alert. By default, the only button will be an 'OK' button.
+Again, we initiate this alert with another method bound to an `on-press` event listener.
 
 ```html
 <template>
@@ -216,7 +225,7 @@ export default {
 
 ### StatusBar
 
-Component to control the app status bar.
+A component that controls the app status bar.
 
 ```html
 <template>
@@ -231,9 +240,7 @@ Component to control the app status bar.
 
 ### Switch
 
-Renders a boolean input.
-
-This is a controlled component that requires an `on-value-change` callback that updates the value prop in order for the component to reflect user actions.
+A component that renders a boolean "on-off" input. Switches are controlled components that require an `on-value-change` callback that updates it's value prop in order for the component to reflect user actions on the Vue Instance.
 
 ```html
 <template>
@@ -274,7 +281,7 @@ The above can also be implemented using `v-model` from `vue-native-template-comp
 
 ### TouchableOpacity
 
-A wrapper for making views respond properly to touches. On press down, the opacity of the wrapped view is decreased, dimming it.
+A wrapper for making Views respond properly to touch input. On press down, the opacity of the wrapped View is decreased, dimming it.
 
 ```html
 <template>
@@ -301,7 +308,7 @@ A wrapper for making views respond properly to touches. On press down, the opaci
 
 ### WebView
 
-WebView renders web content in a native view.
+WebView components are special components that render web content in a native View.
 
 ```html
 <template>
