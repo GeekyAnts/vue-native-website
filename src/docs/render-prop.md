@@ -6,7 +6,7 @@ vue_version: 2.5.13
 gz_size: "30.67"
 ---
 
-The `render prop` API eliminates the need to use JSX. There are mainly two attributes used here based on whether it needs a fuction or a component.
+The `render prop` API eliminates the need to use JSX. There are mainly two attributes used here based on whether it needs a function or a component.
 
 ## render-prop-fn
 
