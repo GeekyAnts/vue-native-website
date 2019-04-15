@@ -65,7 +65,7 @@ In this example, we again take advantage of the `v-bind` directive, as well as a
 ```html
 <template>
     <text-input
-        :style="{height: 40, borderColor: 'gray', borderWidth: 1}"
+        :style="{height: 40, width: 100, borderColor: 'gray', borderWidth: 1}"
         v-model="text"
       />
 </template>
