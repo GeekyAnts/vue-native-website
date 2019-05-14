@@ -55,6 +55,8 @@ Requires an installation of Android build tools (see [React Native docs](https:/
 
  **Note: For RN > 0.55.4. The rn-cli.config.js and vueTransformerPlugin.js should be similar to [rn-cli.config.js](https://github.com/GeekyAnts/vue-native-starter-app/blob/feat/RN58/rn-cli.config.js) and [vueTransformerPlugin.js](https://github.com/GeekyAnts/vue-native-starter-app/blob/feat/RN58/vueTransformerPlugin.js)**
 
+ **For RN > 0.57. The rn-cli.config.js has been replaced by metro.config.js**
+
 
 ** Step 1: Create React Native Project **
 
