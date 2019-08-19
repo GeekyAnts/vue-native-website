@@ -8,7 +8,7 @@ gz_size: "30.67"
 
 ## Frequently Asked Questions
 
-### what are the advantages/differences of Vue Native over React Native
+### What are the advantages/differences of Vue Native over React Native
 
 Vue Native is layer based on top of React Native. The template definition is based on Vuejs which is then converted into suitable react native code. With this, we are able to take advantage of the existing react native ecosystem where a lot of third party libraries and support are available.
 
