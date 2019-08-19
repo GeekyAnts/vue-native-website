@@ -15,7 +15,7 @@ This is very handy when it comes to something like the `v-if` example, you can s
 ```html
 <view>
   <text v-if="seen">Now you see me</text>
-  <button :on-press="seen = !seen>Click to Toggle</button>
+  <button :on-press="seen = !seen">Click to Toggle</button>
 </view>
 ```
 
@@ -42,7 +42,7 @@ Notice how `v-else` doesn't have a parameter input on it? Thats because `v-else`
 <view>
   <text v-if="seen">Now you see the first one.</text>
   <text v-else>Now you see the second one.</text>
-  <button :on-press="seen = !seen>Click to Toggle</button>
+  <button :on-press="seen = !seen">Click to Toggle</button>
 </view>
 ```
 
@@ -67,7 +67,7 @@ That difference is how the directive achieves this. `v-if` will remove the eleme
 ```html
 <view>
   <text v-if="seen">Now you see me</text>
-  <button :on-press="seen = !seen>Click to Toggle</button>
+  <button :on-press="seen = !seen">Click to Toggle</button>
 </view>
 ```
 
