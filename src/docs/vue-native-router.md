@@ -116,7 +116,7 @@ export default {
 
 It is possible to go back from the active screen if there is any. We can trigger it using `this.navigation.goBack()`.
 
-For the full code with usage of `createStackNavigator` refer to [this example](https://github.com/GeekyAnts/vue-native-router/tree/feat/examples/examples/example-1-stack-navigator-usage)
+For the full code with usage of `createStackNavigator` refer to [this example](https://github.com/GeekyAnts/vue-native-router/tree/master/examples/example-1-stack-navigator-usage).
 
 ## Drawer navigation
 
@@ -153,7 +153,7 @@ Then use the `AppNavigator` the same way as shown earlier.
 </template>
 ```
 
-For the full code with usage of `createDrawerNavigator` refer to [this example](https://github.com/GeekyAnts/vue-native-router/tree/feat/examples/examples/example-2-drawer-navigator-usage)
+For the full code with usage of `createDrawerNavigator` refer to [this example](https://github.com/GeekyAnts/vue-native-router/tree/master/examples/example-2-drawer-navigator-usage).
 
 ## Tab navigation
 
@@ -196,7 +196,7 @@ const StackNavigator = createStackNavigator(
 const AppNavigator = createAppContainer(StackNavigator);
 ```
 
-For the full code with usage of `createDrawerNavigator` refer to [this example](https://github.com/GeekyAnts/vue-native-router/tree/feat/examples/examples/example-3-tab-navigator-usage)
+For the full code with usage of `createBottomTabNavigator` and `createMaterialTopTabNavigator` refer to [this example](https://github.com/GeekyAnts/vue-native-router/tree/master/examples/example-3-tab-navigator-usage).
 
 ## Further information
 
