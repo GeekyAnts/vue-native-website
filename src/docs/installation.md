@@ -28,7 +28,7 @@ It allows you to setup a fresh Vue Native app with either Expo or React Native C
 
 ### For Expo users
 
-Expo was designed to allow developrs to quickly set up and develop React Native apps, without having to configure Xcode or Android Studio. It is most suitable for you if you come from a Web background.
+Expo was designed to allow developers to quickly set up and develop React Native apps, without having to configure Xcode or Android Studio. It is most suitable for you if you come from a Web background.
 
 ** Step 0: Install Expo CLI globally **
 
