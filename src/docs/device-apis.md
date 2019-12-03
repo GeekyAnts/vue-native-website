@@ -22,7 +22,7 @@ npm i expo
 import { Accelerometer } from "expo";
 ```
 
-Let's initialise our `accelerometerData` and bind it to our `template`.
+Let's initialize our `accelerometerData` and bind it to our `template`.
 
 ```js
 data: function() {
