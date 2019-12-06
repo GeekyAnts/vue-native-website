@@ -55,7 +55,7 @@ You can even set the update interval of the accelerometer.
 Accelerometer.setUpdateInterval(1000);
 ```
 
-Refer the expo [documention](https://docs.expo.io/versions/latest/sdk/accelerometer) for more details.
+Refer the expo [documentation](https://docs.expo.io/versions/latest/sdk/accelerometer) for more details.
 
 ## Geolocation
 
