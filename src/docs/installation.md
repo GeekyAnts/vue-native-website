@@ -30,6 +30,8 @@ It allows you to setup a fresh Vue Native app with either Expo or React Native C
 
 Expo was designed to allow developrs to quickly set up and develop React Native apps, without having to configure Xcode or Android Studio. It is most suitable for you if you come from a Web background.
 
+*Before starting the installation you may need to install [Yarn](https://yarnpkg.com/lang/en/):*
+
 ** Step 0: Install Expo CLI globally **
 
 ```
@@ -59,10 +61,10 @@ At this point you will need to manually change the `app.json` that has been gene
     ],
     "version": "1.0.0",
     ...
-    "packagerOpts": {
++   "packagerOpts": {
 +     "sourceExts": ["js", "json", "ts", "tsx", "vue"],
-      "config": "metro.config.js"
-    }
++     "config": "metro.config.js"
++   }
   }
 }
 ```
@@ -75,6 +77,57 @@ Now `cd` into the newly created directory and start the development server.
 $ cd <projectName>
 $ npm start
 ```
+
+*If you got some issues like:*
+
+```
+> @ start C:\Users\{username}\{project_root}\my-new-project
+> expo start
+
+Starting project at C:\Users\{username}\{project_root}\my-new-project
+Expo DevTools is running at http://localhost:19002
+Opening DevTools in the browser... (press shift-d to disable)
+error Invalid regular expression: /(.*\\__fixtures__\\.*|node_modules[\\\]react[\\\]dist[\\\].*|website\\node_modules\\.*|heapCapture\\bundle\.js|.*\\__tests__\\.*)$/: Unterminated character class. Run CLI with --verbose flag for more details.
+
+Metro Bundler process exited with code 1
+Set EXPO_DEBUG=true in your env to view the stack trace.
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! @ start: `expo start`
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the @ start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\username\AppData\Roaming\npm-cache\_logs\2019-10-07T11_19_27_567Z-debug.log
+```
+
+You have to make change in this file `{project_root}\node_modules\metro-config\src\defaults\blacklist.js`
+
+There is an invalid regular expression that needed changed : change the first expression under `sharedBlacklist` from:
+
+```
+var sharedBlacklist = [
+  /node_modules[/\\]react[/\\]dist[/\\].*/,
+  /website\/node_modules\/.*/,
+  /heapCapture\/bundle\.js/,
+  /.*\/__tests__\/.*/
+];
+```
+
+to
+
+```
+var sharedBlacklist = [
+  /node_modules[\/\\]react[\/\\]dist[\/\\].*/,
+  /website\/node_modules\/.*/,
+  /heapCapture\/bundle\.js/,
+  /.*\/__tests__\/.*/
+];
+```
+
+Follow this issue in [stackoverflow](https://stackoverflow.com/questions/58268958/i-am-getting-invalid-regular-expression-error-while-running-npm-start).
 
 The above command will run your app in development mode with an interactive prompt. To run it without a prompt, use the --no-interactive flag. Open it in the [Expo app](https://expo.io/) on your phone to view it. It will reload if you save edits to your files, and you will see build errors and logs in the terminal.
 
