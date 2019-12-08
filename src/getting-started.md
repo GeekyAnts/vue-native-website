@@ -9,7 +9,7 @@ order: 3
 ** Hello World In Vue Native **
 
 The easiest way to try out [Vue Native](https://vue-native.io/) is by building a Hello world app. The [Installation](docs/installation.html) page provides setup of installing Vue Native and setup the project.
-Create a .vue file and copy and paste the below content.
+Create a `App.vue` file and copy and paste the below content.
 
 ```html
 <template>
@@ -44,6 +44,24 @@ export default {
   font-size: 30;
 }
 </style>
+```
+
+**If you use Expo:**
+
+Delete the `App.js` file.
+
+In the file `your-app/node-modules/expo/AppEntry.js` (not in `your-app/node-modules/@expo/AppEntry.js`)
+
+change 
+
+```
+import App from '../../App'; 
+```
+
+to 
+
+```
+import App from '../../App.vue';
 ```
 
 <div class="hello-world-container">
