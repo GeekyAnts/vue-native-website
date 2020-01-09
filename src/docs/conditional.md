@@ -66,7 +66,7 @@ Much like the v-if directive, v-show acts in a similar way being that they both 
 That difference is how the directive achieves this. `v-if` will remove the element from the view completely, where as `v-show` keeps the element on the View, and only adjusts the opacity to 0%, or transparent.
 ```html
 <view>
-  <text v-if="seen">Now you see me</text>
+  <text v-show="seen">Now you see me</text>
   <button :on-press="seen = !seen">Click to Toggle</button>
 </view>
 ```
