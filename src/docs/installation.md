@@ -44,29 +44,6 @@ $ vue-native init <projectName>
 
 Follow the prompts to create a new directory with the specified name.
 
-** <a name="modifying-app-json"></a>NOTE **
-
-At this point you will need to manually change the `app.json` that has been generated inside the new project directory. To make the packager recognize `.vue` files, a `sourceExts` field under `packagerOpts`.
-
-```diff
-{
-  "expo": {
-    "name": "Your app's name",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "version": "1.0.0",
-    ...
-    "packagerOpts": {
-+     "sourceExts": ["js", "json", "ts", "tsx", "vue"],
-      "config": "metro.config.js"
-    }
-  }
-}
-```
-
 ** Step 2: Run the app **
 
 Now `cd` into the newly created directory and start the development server.
