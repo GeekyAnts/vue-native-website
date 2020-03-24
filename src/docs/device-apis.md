@@ -66,11 +66,15 @@ You must request permission to access the user's location before attempting to g
 ```html
 <template>
   <view class="container">
-    <text>Location:</text>
-    <text>{{location.latitude}}</text>
-    <touchable-opacity :on-press="getLocation" >
-        <text>get location</text>
+    <touchable-opacity :on-press="getLocation">
+      <text class="text-field-title">Get Location</text>
     </touchable-opacity>
+    <text class="text-field-title">Location Object:</text>
+    <text>{{ location }}</text>
+    <text class="text-field-title">Latitude Only:</text>
+    <text>{{ latitude }}</text>
+
+    <text class="text-error">{{ errorMessage }}</text>
   </view>
 </template>
 
