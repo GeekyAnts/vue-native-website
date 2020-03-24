@@ -92,16 +92,21 @@ export default {
   },
   methods: {
     getLocation: function() {
-      Permissions.askAsync(Permissions.LOCATION).then(status => {
-        if (status !== "granted") {
-          errorMessage = "Permission to access location was denied";
-        }
-        Location.getCurrentPositionAsync({}).then(location1 => {
-          location = location1;
+      Permissions.askAsync(Permissions.LOCATION)
+        .then(status => {
+          if (!status.granted) {
+            this.errorMessage = "Permission to access location was denied";
+          } else if (status.granted) {
+            Location.getCurrentPositionAsync({}).then(location1 => {
+              this.location = location1;
+              this.latitude = location1.coords.latitude
+              this.errorMessage = "";
+            });
+          }
+        })
+        .catch(err => {
+          console.log(err);
         });
-      }).catch((err)=>{
-        console.log(err);
-     });
     }
   }
 };
