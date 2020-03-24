@@ -75,7 +75,8 @@ You must request permission to access the user's location before attempting to g
 </template>
 
  <script>
-import { Constants, Location, Permissions } from "expo";
+import * as Location from "expo-location";
+import * as Permissions from "expo-permissions";
 
 export default {
   data: function() {
