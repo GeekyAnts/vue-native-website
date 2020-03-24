@@ -86,6 +86,7 @@ export default {
   data: function() {
     return {
       location: {},
+      latitude: "",
       errorMessage: ""
     };
   },
