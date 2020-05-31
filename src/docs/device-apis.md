@@ -68,7 +68,7 @@ Accessing the device's hardware to get to know it's location can be acheived by 
 
 You must request permission to access the user's location before attempting to get it. To do this, you will want to use the Permissions API. You can see this in practice in the following example.
 
-If you deny the application permission to access location, it will continue to block. IOS: Use device's Expo application setting to "allow while using" or delete and re-install Expo app.
+If you deny the application permission to access location, it will continue to block. To overcome this on iOS, you can use the device's Expo application setting to "allow while using" or you can delete and re-install Expo app.
 
 ```html
 <template>
