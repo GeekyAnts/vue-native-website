@@ -68,41 +68,52 @@ Accessing the device's hardware to get to know it's location can be acheived by 
 
 You must request permission to access the user's location before attempting to get it. To do this, you will want to use the Permissions API. You can see this in practice in the following example.
 
+If you deny the application permission to access location, it will continue to block. IOS: Use device's Expo application setting to "allow while using" or delete and re-install Expo app.
+
 ```html
 <template>
   <view class="container">
-    <text>Location:</text>
-    <text>{{location.latitude}}</text>
-    <touchable-opacity :on-press="getLocation" >
-        <text>get location</text>
+    <touchable-opacity :on-press="getLocation">
+      <text class="text-field-title">Get Location</text>
     </touchable-opacity>
+    <text class="text-field-title">Location Object:</text>
+    <text>{{ location }}</text>
+    <text class="text-field-title">Latitude Only:</text>
+    <text>{{ latitude }}</text>
+
+    <text class="text-error">{{ errorMessage }}</text>
   </view>
 </template>
 
  <script>
-
-import * as Location from 'expo-location;
-import * as Permissions from 'expo-permissions';
+import * as Location from "expo-location";
+import * as Permissions from "expo-permissions";
 
 export default {
   data: function() {
     return {
       location: {},
+      latitude: "",
       errorMessage: ""
     };
   },
   methods: {
     getLocation: function() {
-      Permissions.askAsync(Permissions.LOCATION).then(status => {
-        if (status !== "granted") {
-          errorMessage = "Permission to access location was denied";
-        }
-        Location.getCurrentPositionAsync({}).then(location1 => {
-          location = location1;
+      Permissions.askAsync(Permissions.LOCATION)
+        .then(status => {
+          if (!status.granted) {
+            this.errorMessage = "Permission to access location was denied";
+          } else if (status.granted) {
+            Location.getCurrentPositionAsync({}).then(location1 => {
+              this.location = location1;
+              this.latitude = location1.coords.latitude
+              this.errorMessage = "";
+            });
+          }
+        })
+        .catch(err => {
+          console.log(err);
         });
-      }).catch((err)=>{
-        console.log(err);
-     });
     }
   }
 };
