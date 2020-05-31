@@ -15,11 +15,17 @@ For non-crna projects created with vue-native, you may use packages such as `rea
 Vue-native projects, need to import the `sensors` from `expo`.
 
 ```shell
-npm i expo
+npm i expo-accelerometer
+
+```
+or yarn
+
+```shell
+yarn add expo-accelerometer
 ```
 
 ```js
-import { Accelerometer } from "expo";
+import { Accelerometer } from "expo-accelerometer";
 ```
 
 Let's initialise our `accelerometerData` and bind it to our `template`.
@@ -58,7 +64,14 @@ Accelerometer.setUpdateInterval(1000);
 Refer the expo [documention](https://docs.expo.io/versions/latest/sdk/accelerometer) for more details.
 
 ## Geolocation
+```shell
+npm i expo-location expo-permissions
+```
+or yarn
 
+```shell
+yarn add expo-location expo-permissions
+```
 Accessing the device's hardware to get to know it's location can be acheived by using APIs provided by `expo`.
 
 You must request permission to access the user's location before attempting to get it. To do this, you will want to use the Permissions API. You can see this in practice in the following example.
@@ -75,7 +88,9 @@ You must request permission to access the user's location before attempting to g
 </template>
 
  <script>
-import { Constants, Location, Permissions } from "expo";
+
+import * as Location from 'expo-location;
+import * as Permissions from 'expo-permissions';
 
 export default {
   data: function() {
@@ -124,7 +139,12 @@ With use of Camera one can also take photos and record videos that are saved to 
 
 Requires `Permissions.CAMERA`. Video recording requires `Permissions.AUDIO_RECORDING`.
 
+```shell
+npm i expo-camera 
+```
+
 ### Basic Example
+
 
 ```html
 <template>
@@ -136,7 +156,11 @@ Requires `Permissions.CAMERA`. Video recording requires `Permissions.AUDIO_RECOR
 
 ```js
 <script>
-import { Camera, Permissions } from "expo";
+
+import * as Permissions from 'expo-permissions';
+import { Camera } from 'expo-camera';
+
+
 export default {
  data: function() {
    return {
