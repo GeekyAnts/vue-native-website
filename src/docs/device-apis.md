@@ -27,11 +27,11 @@ import { Accelerometer } from "expo-sensors";
 Let's initialize our `accelerometerData` and bind it to our `template`.
 
 ```js
-data: function() {
-    return {
-      accelerometerData: {}
-    };
-  },
+data() {
+  return {
+    accelerometerData: {}
+  };
+},
 ```
 
 ```html
@@ -68,41 +68,54 @@ Accessing the device's hardware to get to know it's location can be acheived by 
 
 You must request permission to access the user's location before attempting to get it. To do this, you will want to use the Permissions API. You can see this in practice in the following example.
 
+If you deny the application permission to access location, it will continue to block. To overcome this on iOS, you can use the device's Expo application setting to "allow while using" or you can delete and re-install Expo app.
+
 ```html
 <template>
   <view class="container">
-    <text>Location:</text>
-    <text>{{location.latitude}}</text>
-    <touchable-opacity :on-press="getLocation" >
-        <text>get location</text>
+    <touchable-opacity :on-press="getLocation">
+      <text class="text-field-title">Get Location</text>
     </touchable-opacity>
+    <text class="text-field-title">Location Object:</text>
+    <text>{{ location }}</text>
+    <text class="text-field-title">Latitude Only:</text>
+    <text>{{ latitude }}</text>
+
+    <text class="text-error">{{ errorMessage }}</text>
   </view>
 </template>
+```
 
- <script>
-
-import * as Location from 'expo-location;
-import * as Permissions from 'expo-permissions';
+```html
+<script>
+import * as Location from "expo-location";
+import * as Permissions from "expo-permissions";
 
 export default {
   data: function() {
     return {
       location: {},
+      latitude: "",
       errorMessage: ""
     };
   },
   methods: {
     getLocation: function() {
-      Permissions.askAsync(Permissions.LOCATION).then(status => {
-        if (status !== "granted") {
-          errorMessage = "Permission to access location was denied";
-        }
-        Location.getCurrentPositionAsync({}).then(location1 => {
-          location = location1;
+      Permissions.askAsync(Permissions.LOCATION)
+        .then(status => {
+          if (!status.granted) {
+            this.errorMessage = "Permission to access location was denied";
+          } else if (status.granted) {
+            Location.getCurrentPositionAsync({}).then(location => {
+              this.location = location;
+              this.latitude = location.coords.latitude
+              this.errorMessage = "";
+            });
+          }
+        })
+        .catch(err => {
+          console.log(err);
         });
-      }).catch((err)=>{
-        console.log(err);
-     });
     }
   }
 };
@@ -146,7 +159,7 @@ npm i expo-camera
 </template>
 ```
 
-```js
+```html
 <script>
 import * as Permissions from 'expo-permissions';
 import { Camera } from 'expo-camera';
@@ -263,11 +276,11 @@ Let's bind a variable from the data section that we can change when user clicks 
 ```
 
 ```js
-data: function() {
-    return {
-      notification: {}
-    };
-  },
+data() {
+  return {
+    notification: {}
+  };
+},
 ```
 
 Also a function that handles the notification and also attach a listener so this function is called when the notification is to be handled.
