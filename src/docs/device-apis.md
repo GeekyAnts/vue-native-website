@@ -12,15 +12,16 @@ For non-crna projects created with vue-native, you may use packages such as `rea
 
 ## Accelerometer
 
-Vue-native projects, need to import the `sensors` from `expo`.
+With Expo, you need to import the `Accelerometer` module from `expo-sensors`.
 
+Install the package using:
 ```shell
-npm i expo-accelerometer
-
+npm i expo-sensors
 ```
 
+and import it as follows:
 ```js
-import { Accelerometer } from "expo-accelerometer";
+import { Accelerometer } from "expo-sensors";
 ```
 
 Let's initialize our `accelerometerData` and bind it to our `template`.
