@@ -119,7 +119,7 @@ export default {
 
 The above section has the following functions :
 
-•`created` to initialise our values.
+•`created` to initialize our values.
 • `data` function to define the data that will be used in our templates and functions.
 • `mounted` to call the function to animate our component.
 • Finally the `methods` sections which contain all the functions.

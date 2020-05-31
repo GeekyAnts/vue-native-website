@@ -24,7 +24,7 @@ and import it as follows:
 import { Accelerometer } from "expo-sensors";
 ```
 
-Let's initialise our `accelerometerData` and bind it to our `template`.
+Let's initialize our `accelerometerData` and bind it to our `template`.
 
 ```js
 data: function() {
@@ -57,9 +57,12 @@ You can even set the update interval of the accelerometer.
 Accelerometer.setUpdateInterval(1000);
 ```
 
-Refer the expo [documention](https://docs.expo.io/versions/latest/sdk/accelerometer) for more details.
+Refer the expo [documentation](https://docs.expo.io/versions/latest/sdk/accelerometer) for more details.
 
 ## Geolocation
+```shell
+npm i expo-location expo-permissions
+```
 
 Accessing the device's hardware to get to know it's location can be acheived by using APIs provided by `expo`.
 
@@ -77,7 +80,9 @@ You must request permission to access the user's location before attempting to g
 </template>
 
  <script>
-import { Constants, Location, Permissions } from "expo";
+
+import * as Location from 'expo-location;
+import * as Permissions from 'expo-permissions';
 
 export default {
   data: function() {
@@ -126,7 +131,12 @@ With use of Camera one can also take photos and record videos that are saved to 
 
 Requires `Permissions.CAMERA`. Video recording requires `Permissions.AUDIO_RECORDING`.
 
+```shell
+npm i expo-camera 
+```
+
 ### Basic Example
+
 
 ```html
 <template>
@@ -138,7 +148,10 @@ Requires `Permissions.CAMERA`. Video recording requires `Permissions.AUDIO_RECOR
 
 ```js
 <script>
-import { Camera, Permissions } from "expo";
+import * as Permissions from 'expo-permissions';
+import { Camera } from 'expo-camera';
+
+
 export default {
  data: function() {
    return {
