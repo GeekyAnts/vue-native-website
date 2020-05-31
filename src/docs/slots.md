@@ -83,7 +83,7 @@ Top text
 Text with no name
 ```
 
-Notice that the order of the texts rendered-- corresponds to the `slots` arranged in the child component. The unnamed slot acts as the default slot.
+Notice that the order of the texts rendered corresponds to the `slots` arranged in the child component. The unnamed slot acts as the default slot.
 
 ## Scoped Slots
 

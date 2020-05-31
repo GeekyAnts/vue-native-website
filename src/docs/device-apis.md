@@ -23,7 +23,7 @@ npm i expo-accelerometer
 import { Accelerometer } from "expo-accelerometer";
 ```
 
-Let's initialise our `accelerometerData` and bind it to our `template`.
+Let's initialize our `accelerometerData` and bind it to our `template`.
 
 ```js
 data: function() {
@@ -56,7 +56,7 @@ You can even set the update interval of the accelerometer.
 Accelerometer.setUpdateInterval(1000);
 ```
 
-Refer the expo [documention](https://docs.expo.io/versions/latest/sdk/accelerometer) for more details.
+Refer the expo [documentation](https://docs.expo.io/versions/latest/sdk/accelerometer) for more details.
 
 ## Geolocation
 ```shell
