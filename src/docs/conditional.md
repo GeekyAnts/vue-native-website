@@ -15,17 +15,20 @@ This is very handy when it comes to something like the `v-if` example, you can s
 ```html
 <view>
   <text v-if="seen">Now you see me</text>
-  <button :on-press="seen = !seen">Click to Toggle</button>
+  <button :on-press="toggleSeen">Click to Toggle</button>
 </view>
 ```
 
-```JS
+```html
 <script>
 export default {
-  data: function() {
+  data() {
     return {
       seen: false
     };
+  },
+  toggleSeen() {
+    this.seen = !this.seen;
   }
 };
 </script>
@@ -42,17 +45,20 @@ Notice how `v-else` doesn't have a parameter input on it? Thats because `v-else`
 <view>
   <text v-if="seen">Now you see the first one.</text>
   <text v-else>Now you see the second one.</text>
-  <button :on-press="seen = !seen">Click to Toggle</button>
+  <button :on-press="toggleSeen">Click to Toggle</button>
 </view>
 ```
 
-```JS
+```html
 <script>
 export default {
-  data: function() {
+  data() {
     return {
       seen: false
     };
+  },
+  toggleSeen() {
+    this.seen = !this.seen;
   }
 };
 </script>
@@ -67,17 +73,20 @@ That difference is how the directive achieves this. `v-if` will remove the eleme
 ```html
 <view>
   <text v-show="seen">Now you see me</text>
-  <button :on-press="seen = !seen">Click to Toggle</button>
+  <button :on-press="toggleSeen">Click to Toggle</button>
 </view>
 ```
 
-```JS
+```html
 <script>
 export default {
-  data: function() {
+  data() {
     return {
       seen: false
     };
+  },
+  toggleSeen() {
+    this.seen = !this.seen;
   }
 };
 </script>
