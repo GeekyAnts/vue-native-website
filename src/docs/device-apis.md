@@ -27,11 +27,11 @@ import { Accelerometer } from "expo-sensors";
 Let's initialize our `accelerometerData` and bind it to our `template`.
 
 ```js
-data: function() {
-    return {
-      accelerometerData: {}
-    };
-  },
+data() {
+  return {
+    accelerometerData: {}
+  };
+},
 ```
 
 ```html
@@ -84,8 +84,10 @@ If you deny the application permission to access location, it will continue to b
     <text class="text-error">{{ errorMessage }}</text>
   </view>
 </template>
+```
 
- <script>
+```html
+<script>
 import * as Location from "expo-location";
 import * as Permissions from "expo-permissions";
 
@@ -104,9 +106,9 @@ export default {
           if (!status.granted) {
             this.errorMessage = "Permission to access location was denied";
           } else if (status.granted) {
-            Location.getCurrentPositionAsync({}).then(location1 => {
-              this.location = location1;
-              this.latitude = location1.coords.latitude
+            Location.getCurrentPositionAsync({}).then(location => {
+              this.location = location;
+              this.latitude = location.coords.latitude
               this.errorMessage = "";
             });
           }
@@ -157,7 +159,7 @@ npm i expo-camera
 </template>
 ```
 
-```js
+```html
 <script>
 import * as Permissions from 'expo-permissions';
 import { Camera } from 'expo-camera';
@@ -274,11 +276,11 @@ Let's bind a variable from the data section that we can change when user clicks 
 ```
 
 ```js
-data: function() {
-    return {
-      notification: {}
-    };
-  },
+data() {
+  return {
+    notification: {}
+  };
+},
 ```
 
 Also a function that handles the notification and also attach a listener so this function is called when the notification is to be handled.
