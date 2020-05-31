@@ -147,7 +147,6 @@ npm i expo-camera
 
 ```js
 <script>
-
 import * as Permissions from 'expo-permissions';
 import { Camera } from 'expo-camera';
 
