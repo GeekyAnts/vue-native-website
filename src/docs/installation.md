@@ -18,17 +18,17 @@ This page will help you install and build your first native app using [Vue Nativ
 
 ** Installing Vue Native CLI **
 
-Install Vue Native CLI globally with the following command
+Install Vue Native CLI globally with the following command:
 
 ```
 $ npm install --global vue-native-cli
 ```
 
-It allows you to setup a fresh Vue Native app with either Expo or React Native CLI. Each come with their own pros and cons.
+It allows you to set up a fresh Vue Native app with either Expo or React Native CLI. Each come with their own pros and cons.
 
 ### For Expo users
 
-Expo was designed to allow developrs to quickly set up and develop React Native apps, without having to configure Xcode or Android Studio. It is most suitable for you if you come from a Web background.
+Expo was designed to allow developers to quickly set up and develop React Native apps without having to configure Xcode or Android Studio. It is most suitable for you if you come from a web background.
 
 ** Step 0: Install Expo CLI globally **
 
@@ -43,29 +43,6 @@ $ vue-native init <projectName>
 ```
 
 Follow the prompts to create a new directory with the specified name.
-
-** <a name="modifying-app-json"></a>NOTE **
-
-At this point you will need to manually change the `app.json` that has been generated inside the new project directory. To make the packager recognize `.vue` files, a `sourceExts` field under `packagerOpts`.
-
-```diff
-{
-  "expo": {
-    "name": "Your app's name",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "version": "1.0.0",
-    ...
-    "packagerOpts": {
-+     "sourceExts": ["js", "json", "ts", "tsx", "vue"],
-      "config": "metro.config.js"
-    }
-  }
-}
-```
 
 ** Step 2: Run the app **
 

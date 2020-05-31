@@ -15,17 +15,20 @@ This is very handy when it comes to something like the `v-if` example, you can s
 ```html
 <view>
   <text v-if="seen">Now you see me</text>
-  <button :on-press="seen = !seen">Click to Toggle</button>
+  <button :on-press="toggleSeen">Click to Toggle</button>
 </view>
 ```
 
-```JS
+```html
 <script>
 export default {
-  data: function() {
+  data() {
     return {
       seen: false
     };
+  },
+  toggleSeen() {
+    this.seen = !this.seen;
   }
 };
 </script>
@@ -42,17 +45,20 @@ Notice how `v-else` doesn't have a parameter input on it? Thats because `v-else`
 <view>
   <text v-if="seen">Now you see the first one.</text>
   <text v-else>Now you see the second one.</text>
-  <button :on-press="seen = !seen">Click to Toggle</button>
+  <button :on-press="toggleSeen">Click to Toggle</button>
 </view>
 ```
 
-```JS
+```html
 <script>
 export default {
-  data: function() {
+  data() {
     return {
       seen: false
     };
+  },
+  toggleSeen() {
+    this.seen = !this.seen;
   }
 };
 </script>
@@ -66,18 +72,21 @@ Much like the v-if directive, v-show acts in a similar way being that they both 
 That difference is how the directive achieves this. `v-if` will remove the element from the view completely, where as `v-show` keeps the element on the View, and only adjusts the opacity to 0%, or transparent.
 ```html
 <view>
-  <text v-if="seen">Now you see me</text>
-  <button :on-press="seen = !seen">Click to Toggle</button>
+  <text v-show="seen">Now you see me</text>
+  <button :on-press="toggleSeen">Click to Toggle</button>
 </view>
 ```
 
-```JS
+```html
 <script>
 export default {
-  data: function() {
+  data() {
     return {
       seen: false
     };
+  },
+  toggleSeen() {
+    this.seen = !this.seen;
   }
 };
 </script>
