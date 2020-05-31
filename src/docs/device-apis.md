@@ -18,11 +18,6 @@ Vue-native projects, need to import the `sensors` from `expo`.
 npm i expo-accelerometer
 
 ```
-or yarn
-
-```shell
-yarn add expo-accelerometer
-```
 
 ```js
 import { Accelerometer } from "expo-accelerometer";
@@ -67,11 +62,7 @@ Refer the expo [documention](https://docs.expo.io/versions/latest/sdk/accelerome
 ```shell
 npm i expo-location expo-permissions
 ```
-or yarn
 
-```shell
-yarn add expo-location expo-permissions
-```
 Accessing the device's hardware to get to know it's location can be acheived by using APIs provided by `expo`.
 
 You must request permission to access the user's location before attempting to get it. To do this, you will want to use the Permissions API. You can see this in practice in the following example.
