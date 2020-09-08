@@ -18,7 +18,7 @@ Start off by copying and pasting the following content to `App.vue`:
 <template>
   <view class="container">
     <text class="text-color-primary">{{ message }}</text>
-    <button title="Press me!" @press="exclaim" />
+    <button title="Press me!" :on-press="exclaim" />
   </view>
 </template>
 
