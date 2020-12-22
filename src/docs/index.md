@@ -8,7 +8,7 @@ order: 2
 
 First of all we would like to thank SmallComfort (https://github.com/SmallComfort/react-vue) for their efforts in creating the compiler.
 ## What is Vue Native?
-Vue Native is a mobile framework to build truly native mobile app using [Vue.js](https://vuejs.org/). Its is designed to connect [React Native](https://facebook.github.io/react-native) and Vue.js.
+Vue Native is a mobile framework to build truly native mobile app using [Vue.js](https://vuejs.org/). It is designed to connect [React Native](https://facebook.github.io/react-native) and Vue.js.
 
 Vue Native is a wrapper around React Native APIs, which allows you to use Vue.js and compose rich mobile User Interface.
 
