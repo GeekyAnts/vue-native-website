@@ -194,7 +194,7 @@ Now to repeat the same animation, add a recursive call inside the `start` functi
 
 ## Spin and Glide Animation
 
-The animation properties in our `animatedView` component is `marginLeft` and `rotate` property of `tranform`.
+The animation properties in our `animatedView` component is `marginLeft` and `rotate` property of `transform`.
 
 ```html
 <template>
