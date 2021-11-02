@@ -8,6 +8,8 @@
   </div>
 <% } %>
 <div class="content <%- page.type ? page.type + ' with-sidebar' : '' %> <%- page.type === 'guide' ? page.path.replace(/.+\//, '').replace('.html', '') + '-guide' : '' %>">
+  <div class="deprecation-notice">⚠️ Vue Native has been deprecated and is no longer maintained.</div>
+
   <% if (page.type) { %>
     <% if (page.type === 'menu') { %>
       <form id="search-form">
